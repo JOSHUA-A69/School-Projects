@@ -1,2 +1,2 @@
-# Skool_Projects
+# School_Projects
 A repo of all my School Works and Projects.
