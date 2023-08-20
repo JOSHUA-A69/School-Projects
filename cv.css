@@ -4,7 +4,7 @@ body, h1, h2, h3, h4, p, ul, li {
 }
 
 body {
-  background-color: #f5f0e1; 
+  background-color: #f5f0e1;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -25,12 +25,15 @@ nav {
 
 nav a {
   text-decoration: none;
-  color: #946f4c; 
+  color: #946f4c;
   margin-right: 10px;
 }
 
 nav a:hover {
-  color: navy; 
+  color: peachpuff;
+  transition: color 0.3s;
+  transition: transform 0.3s ease-out;
+  transform: scale(1.2);
 }
 
 main {
@@ -39,14 +42,21 @@ main {
 
 section {
   padding-bottom: 25px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+section:hover {
+  background-color: peachpuff;
+  color: #000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 h1 {
-  color: #946f4c; 
+  color: #946f4c;
 }
 
 h2 {
-  color: #b48266; 
+  color: #b48266;
   margin-bottom: 10px;
 }
 
@@ -55,7 +65,7 @@ h3 {
 }
 
 p {
-  color: #4d4d4d; 
+  color: #4d4d4d;
   margin-bottom: 10px;
 }
 
@@ -68,7 +78,7 @@ strong {
 }
 
 footer {
-  background-color: #f5f0e1 ;
+  background-color: #f5f0e1;
   color: white;
   padding: 20px;
   text-align: center;
@@ -77,24 +87,25 @@ footer {
 #profiles {
   margin: 20px;
 }
-  #profiles a {
-    display: inline-block;
-    margin: 0 10px;
-    text-decoration: none;
-    color: white;
-  }
 
-  #profiles img {
-    vertical-align: middle;
-  }
-  
-  footer p {
-    margin-top: 20px;
-    font-size: 14px;
-  }
- 
+#profiles a {
+  display: inline-block;
+  margin: 0 10px;
+  text-decoration: none;
+  color: white;
+}
+
+#profiles img {
+  vertical-align: middle;
+}
+
+footer p {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
 button {
-  background-color: #946f4c; 
+  background-color: #946f4c;
   color: #fff;
   border: none;
   padding: 5px 10px;
@@ -108,26 +119,43 @@ button a {
 }
 
 button:hover {
-  background-color:#b48266; 
+  background-color: #b48266;
 }
 
 .profile-link {
   display: inline-block;
-  margin: 20px;
+  margin: 10px;
   text-align: center;
-  transition: transform 0.3s ease;
+}
+
+.profile-link a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s;
 }
 
 .profile-link img {
   width: 50px;
   height: 30px;
-  opacity: 0.7;
+  transition: transform 0.3s ease-out;
 }
 
-.profile-link:hover {
-  transform: scale(1.1);
+.profile-link img:hover {
+  transform: scale(1.2);
 }
 
-.profile-link:hover img {
-  opacity: 1;
+.profile-link p {
+  margin: 5px 0;
+}
+
+#personal-info:hover{
+  background-color: peachpuff;
+  color: #000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.head:hover{
+  background-color: peachpuff;
+  color: #000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
