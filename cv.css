@@ -31,9 +31,6 @@ nav a {
 
 nav a:hover {
   color: peachpuff;
-  transition: color 0.3s;
-  transition: transform 0.3s ease-out;
-  transform: scale(1.2);
 }
 
 main {
@@ -159,3 +156,54 @@ button:hover {
   color: #000;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
+
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+
+@media (max-width: 768px) {
+  header {
+    text-align: center;
+  }
+  .head img {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .head h1 {
+    font-size: 20px;
+  }
+  nav {
+    text-align: center;
+  }
+}
+
+
+@media (max-width: 768px) {
+  main {
+    padding: 10px;
+  }
+  article {
+    margin-bottom: 20px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  footer {
+    text-align: center;
+    padding: 10px;
+  }
+  .profile-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
