@@ -1,11 +1,12 @@
 body, h1, h2, h3, h4, p, ul, li {
-  margin: 10;
-  padding: 20;
+  margin: 10px;
+  padding: 20px;
 }
 
 body {
   background-color: #f5f0e1;
   font-family: Georgia, 'Times New Roman', Times, serif;
+  margin: 0;
 }
 
 #container {
@@ -14,13 +15,14 @@ body {
   padding: 15px;
 }
 
-header {
+header, .head {
   text-align: center;
   padding-bottom: 20px;
 }
 
 nav {
   margin-bottom: 20px;
+  text-align: center;
 }
 
 nav a {
@@ -37,18 +39,18 @@ main {
   padding: 25px;
 }
 
-section {
+section, #personal-info, .head {
   padding-bottom: 25px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
-section:hover {
+section:hover, #personal-info:hover, .head:hover {
   background-color: peachpuff;
   color: #000;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-h1 {
+h1, h3 {
   color: #946f4c;
 }
 
@@ -57,17 +59,14 @@ h2 {
   margin-bottom: 10px;
 }
 
-h3 {
-  color: #946f4c;
-}
-
 p {
-  color: #4d4d4d ;
+  color: #4d4d4d;
   margin-bottom: 10px;
 }
 
 ul {
   list-style-type: circle;
+  padding: 0;
 }
 
 strong {
@@ -86,14 +85,14 @@ footer {
 }
 
 #profiles a {
-  display: middle;  
+  display: inline-block;
   margin: 0 10px;
   text-decoration: none;
   color: white;
 }
 
 #profiles img {
-  vertical-align: center;
+  vertical-align: middle;
 }
 
 footer p {
@@ -106,6 +105,7 @@ button {
   color: brown;
   cursor: pointer;
   font-family: Georgia, 'Times New Roman', Times, serif;
+  border: none;
 }
 
 button a {
@@ -139,34 +139,19 @@ button:hover {
   transform: scale(1.2);
 }
 
-.profile-link p {
-  margin: 5px 0;
-}
-
-#personal-info:hover{
-  background-color: peachpuff;
-  color: #000;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.head:hover{
-  background-color: peachpuff;
-  color: #000;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-body {
-  margin: 0;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
 @media (max-width: 768px) {
-  header {
+  header, .head {
     text-align: center;
   }
   .head img {
     display: block;
     margin: 0 auto;
+  }
+  main {
+    padding: 10px;
+  }
+  article {
+    margin-bottom: 20px;
   }
 }
 
@@ -177,40 +162,29 @@ body {
   nav {
     text-align: center;
   }
-}
-
-@media (max-width: 768px) {
-  main {
-    padding: 10px;
-  }
-  article {
-    margin-bottom: 20px;
-  }
-}
-
-@media (max-width: 480px) {
   footer {
     text-align: center;
     padding: 10px;
   }
   .profile-link {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: block;
+    text-align: center;
+    margin: 10px auto;
   }
 }
 
 #skills ul {
   list-style: none;
   padding: 0;
-  display: flex;
+  display: vertical;
   justify-content: space-around;
+  align-items: center;
 }
 
 #skills li {
   text-align: center;
 }
 
-#skills  img {
+#skills img {
   border-radius: 35%;
 }
