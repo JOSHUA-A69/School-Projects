@@ -86,14 +86,14 @@ footer {
 }
 
 #profiles a {
-  display: inline-block;
+  display: middle;  
   margin: 0 10px;
   text-decoration: none;
   color: white;
 }
 
 #profiles img {
-  vertical-align: middle;
+  vertical-align: center;
 }
 
 footer p {
@@ -155,12 +155,10 @@ button:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-
 body {
   margin: 0;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
-
 
 @media (max-width: 768px) {
   header {
@@ -172,7 +170,6 @@ body {
   }
 }
 
-
 @media (max-width: 480px) {
   .head h1 {
     font-size: 20px;
@@ -182,7 +179,6 @@ body {
   }
 }
 
-
 @media (max-width: 768px) {
   main {
     padding: 10px;
@@ -191,7 +187,6 @@ body {
     margin-bottom: 20px;
   }
 }
-
 
 @media (max-width: 480px) {
   footer {
@@ -205,3 +200,17 @@ body {
   }
 }
 
+#skills ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+#skills li {
+  text-align: center;
+}
+
+#skills  img {
+  border-radius: 35%;
+}
