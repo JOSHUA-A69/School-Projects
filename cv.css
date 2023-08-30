@@ -21,14 +21,16 @@ header, .head {
 }
 
 nav {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   text-align: center;
 }
 
 nav a {
   text-decoration: none;
   color: #946f4c;
-  margin-right: 10px;
+  font-size: small;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-right: 15px;
 }
 
 nav a:hover {
@@ -98,23 +100,6 @@ footer {
 footer p {
   margin-top: 20px;
   font-size: 14px;
-}
-
-button {
-  background-color: burlywood;
-  color: brown;
-  cursor: pointer;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  border: none;
-}
-
-button a {
-  color: #fff;
-  text-decoration: none;
-}
-
-button:hover {
-  background-color: #b48266;
 }
 
 .profile-link {
