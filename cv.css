@@ -27,14 +27,14 @@ nav {
 
 nav a {
   text-decoration: none;
-  color: #946f4c;
-  font-size: small;
+  color: burlywood;
+  font-size: smaller;
   font-family: Arial, Helvetica, sans-serif;
   margin-right: 15px;
 }
 
 nav a:hover {
-  color: peachpuff;
+  color:  #946f4c;
 }
 
 main {
