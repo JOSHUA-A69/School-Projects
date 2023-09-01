@@ -14,12 +14,12 @@ body {
 #container {
   max-width: 800px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 30px;
 }
 
 header, .head {
   text-align: center;
-  padding-bottom: 30px;
+  padding-bottom: 10px;
 }
 
 nav {
@@ -41,7 +41,7 @@ nav a:hover {
 }
 
 nav {
-  border: 0px solid #FD971F; 
+  border: 5px solid #FD971F; 
   padding: 5px; 
 }
 
@@ -52,7 +52,7 @@ nav a {
 }
 
 main {
-  padding: 30px;
+  padding: 50px;
 }
 
 section, #personal-info, .head {
@@ -129,7 +129,7 @@ footer p {
 }
 
 .profile-link img {
-  width: 60px;
+  width: 80px;
   height: 40px;
   transition: transform 0.3s ease-out;
 }
@@ -163,7 +163,7 @@ footer p {
   }
   footer {
       text-align: center;
-      padding: 15px;
+      padding: 5px;
   }
   .profile-link {
       display: block;
@@ -193,5 +193,9 @@ footer p {
 }
 
 header img{
-  border-radius: 80%;
+  border-radius: 30%;
+}
+
+#Title{
+  text-align: center;
 }
