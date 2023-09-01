@@ -1,81 +1,81 @@
 body, h1, h2, h3, h4, p, ul, li {
-  margin: 10px;
-  padding: 20px;
+  margin: 15px;
+  padding: 25px;
 }
 
 body {
-  background-color: #f5f0e1;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: #272822;
+  font-family: Monaco, Consolas, 'Courier New', monospace;
   margin: 0;
 }
 
 #container {
   max-width: 800px;
   margin: 0 auto;
-  padding: 15px;
+  padding: 20px;
 }
 
 header, .head {
   text-align: center;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
 }
 
 nav {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   text-align: center;
 }
 
 nav a {
   text-decoration: none;
-  color: burlywood;
-  font-size: x-small;
+  color: #F8F8F2;
+  font-size: smaller;
   font-family: Arial, Helvetica, sans-serif;
-  margin-right: 80px;
-  margin-left: 40px;
+  margin-right: 100px;
+  margin-left: 50px;
 }
 
 nav a:hover {
-  color:  #946f4c;
+  color: #FD971F;
 }
 
 nav {
-  border: 0px solid #946f4c; 
-  padding: 3px; 
+  border: 0px solid #FD971F; 
+  padding: 5px; 
 }
 
 nav a {
   text-decoration: none;
-  margin: 0 5px; 
-  color: burlywood;
+  margin: 0 10px; 
+  color: #F8F8F2;
 }
 
 main {
-  padding: 25px;
+  padding: 30px;
 }
 
 section, #personal-info, .head {
-  padding-bottom: 25px;
+  padding-bottom: 30px;
   transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
 section:hover, #personal-info:hover, .head:hover {
-  background-color: peachpuff;
-  color: #000;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background-color: #49483E;
+  color: #F8F8F2;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
 h1, h3 {
-  color: #946f4c;
+  color: #FD971F;
 }
 
 h2 {
-  color: #b48266;
-  margin-bottom: 10px;
+  color: #A6E22E;
+  margin-bottom: 15px;
 }
 
 p {
-  color: #4d4d4d;
-  margin-bottom: 10px;
+  color: #E6DB74;
+  margin-bottom: 15px;
 }
 
 ul {
@@ -88,21 +88,21 @@ strong {
 }
 
 footer {
-  background-color: #f5f0e1;
-  color: white;
-  padding: 20px;
+  background-color: #272822;
+  color: #F8F8F2;
+  padding: 25px;
   text-align: center;
 }
 
 #profiles {
-  margin: 20px;
+  margin: 25px;
 }
 
 #profiles a {
   display: inline-block;
-  margin: 0 10px;
+  margin: 0 15px;
   text-decoration: none;
-  color: white;
+  color: #F8F8F2;
 }
 
 #profiles img {
@@ -110,25 +110,25 @@ footer {
 }
 
 footer p {
-  margin-top: 20px;
-  font-size: 14px;
+  margin-top: 25px;
+  font-size: 16px;
 }
 
 .profile-link {
   display: inline-block;
-  margin: 10px;
+  margin: 15px;
   text-align: center;
 }
 
 .profile-link a {
   text-decoration: none;
-  color: #333;
+  color: #75715E;
   transition: color 0.3s;
 }
 
 .profile-link img {
-  width: 50px;
-  height: 30px;
+  width: 60px;
+  height: 40px;
   transition: transform 0.3s ease-out;
 }
 
@@ -138,35 +138,35 @@ footer p {
 
 @media (max-width: 768px) {
   header, .head {
-    text-align: center;
+      text-align: center;
   }
   .head img {
-    display: block;
-    margin: 0 auto;
+      display: block;
+      margin: 0 auto;
   }
   main {
-    padding: 10px;
+      padding: 15px;
   }
   article {
-    margin-bottom: 20px;
+      margin-bottom: 25px;
   }
 }
 
 @media (max-width: 480px) {
   .head h1 {
-    font-size: 20px;
+      font-size: 24px;
   }
   nav {
-    text-align: center;
+      text-align: center;
   }
   footer {
-    text-align: center;
-    padding: 10px;
+      text-align: center;
+      padding: 15px;
   }
   .profile-link {
-    display: block;
-    text-align: center;
-    margin: 10px auto;
+      display: block;
+      text-align: center;
+      margin: 15px auto;
   }
 }
 
