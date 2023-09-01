@@ -108,6 +108,8 @@ footer {
 
 #profiles img {
   vertical-align: middle;
+  border-radius:20%;
+  opacity: 55%;
 }
 
 footer p {
@@ -184,9 +186,14 @@ footer p {
 }
 
 #skills img {
-  border-radius: 35%;
+  border-radius: 20%;
+  opacity: 55%;
 }
 
 .ABOUTME{
   color:#E6DB74;
+}
+
+header img{
+  opacity: 55%;
 }
