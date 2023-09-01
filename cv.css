@@ -62,7 +62,7 @@ section, #personal-info, .head {
 
 section:hover, #personal-info:hover, .head:hover {
   background-color: #75715E;
-  color: #F8F8F2;
+  color: #E6DB74;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
@@ -190,4 +190,8 @@ footer p {
 
 .ABOUTME{
   color:#E6DB74;
+}
+
+header img{
+  border-radius: 80%;
 }
