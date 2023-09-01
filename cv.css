@@ -1,4 +1,4 @@
-body, h1, h2, h3, h4, p, ul, li {
+body, h1, h2, h3, h4, h5, p, ul, li {
   margin: 15px;
   padding: 25px;
 }
@@ -64,7 +64,7 @@ section:hover, #personal-info:hover, .head:hover {
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
-h1, h3 {
+h1, h3, h5 {
   color: #FD971F;
 }
 
@@ -80,6 +80,7 @@ p {
 
 ul {
   list-style-type: circle;
+  color:#E6DB74;
   padding: 0;
 }
 
@@ -184,4 +185,8 @@ footer p {
 
 #skills img {
   border-radius: 35%;
+}
+
+.ABOUTME{
+  color:#E6DB74;
 }
