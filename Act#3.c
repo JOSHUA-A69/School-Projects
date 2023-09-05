@@ -1,36 +1,42 @@
-/*C program that accepts 10 letters.  These letters should be either ‘a’, ‘b’, or ‘c’ only. It should store these into an array. 
- The program counts the number of ‘a’, ‘b’, or ‘c’. Display these counts.*/
- #include <stdio.h>
- #define letters 10
+#include <stdio.h>
 
-void acceptletters(char lett[letters]){
+
+void acceptletters(char lett[], int letters){
 	int ctr;
-	
-	printf("Input 10 letterss: ");
+	printf("Input %d Letters:",letters);
 	for(ctr = 0; ctr < letters; ctr++){
-		printf("\n#%c: ", ctr+1);
-		scanf("%c", &lett[ctr]);
+		printf("\n#%d:", ctr + 1);
+		scanf(" %c ",&lett[ctr]);
 	}
 }
 
-void countletters(char lett[letters]){
-	int ctr, 'a'= 0, 'b' = 0, 'c' = 0;
-	
-	for(ctr = 0; ctr < letters; ctr++){
-		if(num[ctr] % 2 == 0)
-		  'a'++;
-		if else
-		  'b'++;  
-	    else
-		'c'++;
+void countletters(char lett[], int letters){
+	int ctr, a = 0, b = 0, c = 0;
+
+	for (ctr = 0; ctr < letters; ctr++){
+		if(lett[ctr] == 'a' || 'A'){
+			a++;
+		}
+	else if (lett[ctr == 'b' || 'B']){
+		b++;
 	}
-	displaynumberofabc(lett);
-	printf("\nNumber of A = %c", 'a');
-	printf("\nNumber of B = %c", 'b');
-	printf("\nNumber of B = %c", 'c');
+   else if (lett[ctr] == 'c' || 'C'){
+	c++;
+   }
+	}
+	 printf("\nNumber of A = %d", a);
+     printf("\nNumber of B = %d", b);
+     printf("\nNumber of C = %d", c);
+
 }
 
 int main(){
-	
-	
+	int letters = 10;
+	char lett[letters];
+
+	acceptletters(lett,letters);
+	countletters(lett,letters);
+	return 0;
 }
+
+   
