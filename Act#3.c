@@ -14,6 +14,9 @@ void countletters(char lett[], int letters){
 	int ctr, a = 0, b = 0, c = 0;
 
 	for (ctr = 0; ctr < letters; ctr++){
+		char currentChar = lett[ctr];
+		currentChar = toupper(currentChar);
+		
 		if(lett[ctr] == 'a'){
 			a++;
 		}
