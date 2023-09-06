@@ -6,7 +6,7 @@ void acceptletters(char lett[], int letters){
 	printf("Input %d Letters:",letters);
 	for(ctr = 0; ctr < letters; ctr++){
 		printf("\n#%d:", ctr + 1);
-		scanf(" %c ",&lett[ctr]);
+		scanf(" %c",&lett[ctr]);
 	}
 }
 
@@ -14,13 +14,13 @@ void countletters(char lett[], int letters){
 	int ctr, a = 0, b = 0, c = 0;
 
 	for (ctr = 0; ctr < letters; ctr++){
-		if(lett[ctr] == 'a' || 'A'){
+		if(lett[ctr] == 'a'){
 			a++;
 		}
-	else if (lett[ctr == 'b' || 'B']){
+	else if (lett[ctr] == 'b'){
 		b++;
 	}
-   else if (lett[ctr] == 'c' || 'C'){
+   else if (lett[ctr] == 'c'){
 	c++;
    }
 	}
