@@ -11,25 +11,37 @@ void acceptletters(char lett[], int letters){
 }
 
 void countletters(char lett[], int letters){
-	int ctr, a = 0, b = 0, c = 0;
+	int ctr, lower_a = 0, lower_b = 0, lower_c = 0, upper_a = 0, upper_b = 0, upper_c = 0;
 
 	for (ctr = 0; ctr < letters; ctr++){
 		char currentChar = lett[ctr];
-		currentChar = toupper(currentChar);
 		
-		if(lett[ctr] == 'a'){
-			a++;
+		
+	if(currentChar == 'a'){
+	 lower_a++;
 		}
-	else if (lett[ctr] == 'b'){
-		b++;
+	else if (currentChar == 'A'){
+	  upper_a++;
 	}
-   else if (lett[ctr] == 'c'){
-	c++;
+    else if (currentChar == 'b'){
+	  lower_b++;
+   }
+    else if (currentChar == 'B'){
+   	 upper_b++;
+   }
+    else if (currentChar == 'c'){
+   	 lower_c++;
+   }
+    else if (currentChar == 'C'){
+   	 upper_c++;
    }
 	}
-	 printf("\nNumber of A = %d", a);
-     printf("\nNumber of B = %d", b);
-     printf("\nNumber of C = %d", c);
+    printf("\nNumber of lowercase A = %d", lower_a);
+    printf("\nNumber of uppercase A = %d", upper_a);
+    printf("\nNumber of lowercase B = %d", lower_b);
+    printf("\nNumber of uppercase B = %d", upper_b);
+    printf("\nNumber of lowercase C = %d", lower_c);
+    printf("\nNumber of uppercase C = %d", upper_c);
 
 }
 
