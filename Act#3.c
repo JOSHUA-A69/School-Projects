@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-
 void acceptletters(char lett[], int letters){
 	int ctr;
 	printf("Input %d Letters:",letters);
@@ -9,7 +8,6 @@ void acceptletters(char lett[], int letters){
 		scanf(" %c",&lett[ctr]);
 	}
 }
-
 void countletters(char lett[], int letters){
 	int ctr, a = 0, b = 0, c = 0;
 
@@ -17,10 +15,10 @@ void countletters(char lett[], int letters){
 	
 		
 	if(lett[ctr] == 'A' || lett[ctr] == 'a'){
-			a++;
+	a++;
 		}
 	else if (lett[ctr] == 'B' || lett[ctr] == 'b'){
-		b++;
+	b++;
 	}
    else if (lett[ctr] == 'C' || lett[ctr] == 'c'){
 	c++;
