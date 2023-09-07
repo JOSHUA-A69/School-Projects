@@ -14,16 +14,15 @@ void countletters(char lett[], int letters){
 	int ctr, a = 0, b = 0, c = 0;
 
 	for (ctr = 0; ctr < letters; ctr++){
-		char currentChar = lett[ctr];
-		currentChar = toupper(currentChar);
+	
 		
-		if(lett[ctr] == 'A'){
+	if(lett[ctr] == 'A' || lett[ctr] == 'a'){
 			a++;
 		}
-	else if (lett[ctr] == 'B'){
+	else if (lett[ctr] == 'B' || lett[ctr] == 'b'){
 		b++;
 	}
-   else if (lett[ctr] == 'C'){
+   else if (lett[ctr] == 'C' || lett[ctr] == 'c'){
 	c++;
    }
 	}
@@ -34,7 +33,6 @@ void countletters(char lett[], int letters){
 }
 
 int main(){
-	char text[] = "aAbBcC";
 	int letters = 10;
 	char lett[letters];
 
