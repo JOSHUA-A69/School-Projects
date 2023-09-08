@@ -13,7 +13,7 @@ void acceptScores(float scores[3][4]) {
     }
 }
 
-void displayScores(float scores[3][4]) {
+void displayallScores(float scores[3][4]) {
     printf("\nStudent scores\n");
 
     for (int i = 0; i < 3; i++) {
