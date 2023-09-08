@@ -25,10 +25,24 @@ void displayScores(float scores[3][4]) {
     }
 }
 
+void averageScores(float scores[3][4]) {
+    printf("\nStudent averages\n");
+
+    for (int i = 0; i < 3; i++) {
+       float sum = 0.0;
+        for (int j = 0; j < 4; j++) {
+           sum += scores[i][j];   
+        }
+        float average = sum / 4.0;
+        printf("Student %d Average: %.2f\n", i + 1, average);
+    }
+}
+
 
 int main(){
 float scores[3][4];
 
     acceptScores(scores);
     displayScores(scores);
+    averageScores(scores);
 }
