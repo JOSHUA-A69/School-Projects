@@ -56,6 +56,7 @@ body, h1, h2, h3, h4, h5, p, ul, li {
   }
   
    #personal-info, .head {
+    text-align: center;
     padding-bottom: 30px;
     transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
   }
