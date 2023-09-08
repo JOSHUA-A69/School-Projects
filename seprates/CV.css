@@ -166,3 +166,14 @@ body, h1, h2, h3, h4, h5, p, ul, li {
     text-align: center;
   }
   
+  #education{
+    text-align: center;
+  }
+
+  #work-experience{
+    text-align: center;
+  }
+
+  #bio{
+    text-align: center;
+  }
