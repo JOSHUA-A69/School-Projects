@@ -183,45 +183,15 @@ footer p {
 
 /* Add media query for mobile */
 @media (max-width: 768px) {
-  /* Define the common styles for nav */
-nav {
-  margin-bottom: 15px;
-  text-align: center;
-  /* Add a fixed width for the sidebar */
-  width: 250px; /* Adjust this width as needed */
-  position: fixed; /* Make it fixed so it stays visible while scrolling */
-  top: 0;
-  left: -250px; /* Initially hide the sidebar off-screen */
-  height: 100%; /* Make it take up the full height of the viewport */
-  background-color: #333; /* Background color for the sidebar */
-  transition: left 0.3s ease; /* Add smooth transition for open/close */
-}
+  nav {
+    margin-bottom: 10px;
+  }
 
-/* Adjust the position of the main content when the sidebar is open */
-.main {
-  margin-left: 250px; /* Match the width of the sidebar */
-}
-
-/* Add a class to toggle the sidebar */
-.nav-open {
-  left: 0; /* Show the sidebar when this class is applied */
-}
-
-/* Modify the styles for nav links in the sidebar */
-nav a {
-  text-decoration: none;
-  color: #F8F8F2;
-  font-size: small;
-  margin-right: 0; /* Remove right margin */
-  margin-left: 0; /* Remove left margin */
-  display: block; /* Stack the links vertically */
-  padding: 15px; /* Add padding for each link */
-}
-
-/* Apply the hover color to nav links in the sidebar */
-nav a:hover {
-  color: #A6E22E;
-}
+  nav a {
+    margin-right: 10px;
+    margin-left: 10px;
+    font-size: small;
+  }
 
   #profiles img {
     width: 60px;
