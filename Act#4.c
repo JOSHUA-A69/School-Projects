@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+
 void acceptScores(float scores[3][4]) {
     printf("Enter scores for 3 students and 4 quizzes:\n");
     
@@ -13,7 +14,7 @@ void acceptScores(float scores[3][4]) {
     }
 }
 
-void displayallScores(float scores[3][4]) {
+void displayAllScore(float scores[3][4]) {
     printf("\nStudent scores\n");
 
     for (int i = 0; i < 3; i++) {
@@ -25,7 +26,7 @@ void displayallScores(float scores[3][4]) {
     }
 }
 
-void averageScores(float scores[3][4]) {
+void computeStudentAve(float scores[3][4]) {
     printf("\nStudent averages\n");
 
     for (int i = 0; i < 3; i++) {
@@ -43,6 +44,6 @@ int main(){
 float scores[3][4];
 
     acceptScores(scores);
-    displayScores(scores);
-    averageScores(scores);
+    displayAllScore(scores);
+    computeStudentAve(scores);
 }
