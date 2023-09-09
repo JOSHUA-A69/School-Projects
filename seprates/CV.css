@@ -47,7 +47,7 @@ nav {
 
 nav a {
   text-decoration: none;
-  margin: 15px 40px;
+  margin: 15px 35px;
   color: #F8F8F2;
 }
 
@@ -188,8 +188,8 @@ footer p {
   }
 
   nav a {
-    margin-right: 18px;
-    margin-left: 47px;
+    margin-right: 20px;
+    margin-left: 50px;
     font-size: x-small;
   }
 
