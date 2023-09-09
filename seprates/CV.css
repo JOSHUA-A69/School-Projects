@@ -41,13 +41,13 @@ nav a:hover {
 }
 
 nav {
-  border: 5px solid #FD971F;
+  border: 3px solid #FD971F;
   padding: 3px;
 }
 
 nav a {
   text-decoration: none;
-  margin: 0 10px;
+  margin: 15px 40px;
   color: #F8F8F2;
 }
 
@@ -188,8 +188,8 @@ footer p {
   }
 
   nav a {
-    margin-right: 5px;
-    margin-left: 5px;
+    margin-right: 15px;
+    margin-left: 40px;
     font-size: x-small;
   }
 
