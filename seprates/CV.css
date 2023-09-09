@@ -223,24 +223,6 @@ nav a:hover {
   color: #A6E22E;
 }
 
-/* Modify the media query for mobile */
-@media (max-width: 768px) {
-  /* Hide the original navigation */
-  nav {
-    display: none;
-  }
-
-  /* Show the navigation sidebar when a class is applied */
-  .nav-open nav {
-    display: block;
-  }
-
-  /* Adjust the position of the main content when the sidebar is open */
-  .main {
-    margin-left: 0; /* Move the main content to the left when the sidebar is open */
-  }
-}
-
   #profiles img {
     width: 60px;
     height: 30px;
