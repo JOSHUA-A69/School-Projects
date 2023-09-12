@@ -197,12 +197,14 @@ a:hover {
 @media (max-width: 800px) {
   nav {
     margin-bottom: 10px;
+    text-align: center;
   }
 
   nav a {
-    margin-right: 10px;
-    margin-left: 15px;
+    display: inline block;
+    margin: 0 10px;
     font-size: 14px;
+    text-decoration: none;
   }
 
   #profiles img {
