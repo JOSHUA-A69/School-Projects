@@ -193,9 +193,8 @@ a:hover {
   color: #A6E22E;
 }
 
-
 /* Add media query for mobile */
-@media (max-width: 1000px) {
+@media (max-width: 800px) {
   nav {
     margin-bottom: 10px;
   }
@@ -203,17 +202,17 @@ a:hover {
   nav a {
     margin-right: 10px;
     margin-left: 15px;
-    font-size: xx-small;
+    font-size: 14px;
   }
 
   #profiles img {
-    width: 45px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
   }
 
   .profile-link img {
-    width: 45px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
   }
 }
 
