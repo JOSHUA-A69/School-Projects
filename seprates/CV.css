@@ -195,7 +195,7 @@ a:hover {
 
 
 /* Add media query for mobile */
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
   nav {
     margin-bottom: 10px;
   }
