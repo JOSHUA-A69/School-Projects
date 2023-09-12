@@ -6,7 +6,11 @@ void acceptletters(char lett[], int letters){
 	for(ctr = 0; ctr < letters; ctr++){
 		printf("\n#%d:", ctr + 1);
 		scanf(" %c",&lett[ctr]);
-	}
+		if(lett[ctr] != 'A' && lett[ctr] !='a' && lett[ctr] != 'B' && lett[ctr] != 'b' && lett[ctr] != 'C' && lett[ctr] != 'c') {
+		printf("invalid input!");
+		break;
+   }
+ }
 }
 void countletters(char lett[], int letters){
 	int ctr, a = 0, b = 0, c = 0;
@@ -23,8 +27,7 @@ void countletters(char lett[], int letters){
    else if (lett[ctr] == 'C' || lett[ctr] == 'c'){
 	c++;
    }
-	}
-	 printf("\nNumber of A = %d", a);
+ }	 printf("\nNumber of A = %d", a);
      printf("\nNumber of B = %d", b);
      printf("\nNumber of C = %d", c);
 
