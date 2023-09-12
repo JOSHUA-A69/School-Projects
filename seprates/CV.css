@@ -184,6 +184,11 @@ text-align: center;
 text-align: center;
 }
 
+a {
+   text-decoration: none;
+   color: white
+}
+
 /* Add media query for mobile */
 @media (max-width: 800px) {
   nav {
