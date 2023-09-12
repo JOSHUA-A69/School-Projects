@@ -200,6 +200,11 @@ a:hover {
     text-align: center;
   }
 
+  .nav-container {
+    flex-direction: row; 
+    justify-content: center; 
+  }
+
   nav a {
     display: inline block;
     margin: 0 10px;
@@ -230,7 +235,6 @@ a:hover {
   color: #FD971F;; 
 }
 
-
 .hire label {
   display: block;
   margin-top: 10px;
@@ -256,7 +260,6 @@ a:hover {
   border-radius: 5px;
   cursor: pointer;
 }
-
 
 .hire input[type="submit"]:hover {
   background-color: #1d274f; 
