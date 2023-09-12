@@ -184,10 +184,15 @@ text-align: center;
 text-align: center;
 }
 
-a {
+a{
    text-decoration: none;
-   color: white
+   color: #FD971F;
 }
+
+a:hover {
+  color: #A6E22E;
+}
+
 
 /* Add media query for mobile */
 @media (max-width: 800px) {
