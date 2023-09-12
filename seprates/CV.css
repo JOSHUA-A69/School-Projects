@@ -32,8 +32,8 @@ nav a {
   color: #F8F8F2;
   font-size: 15px;
   font-family: 'Courier New', Courier, monospace;
-  margin-right: 20px;
-  margin-left: 20px;
+  margin-right: 15px;
+  margin-left: 10px;
 }
 
 nav a:hover {
@@ -185,24 +185,92 @@ text-align: center;
 }
 
 /* Add media query for mobile */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   nav {
     margin-bottom: 10px;
   }
 
   nav a {
-    margin-right: 15px;
+    margin-right: 10px;
     margin-left: 15px;
     font-size: xx-small;
   }
 
   #profiles img {
-    width: 60px;
-    height: 30px;
+    width: 45px;
+    height: 25px;
   }
 
   .profile-link img {
-    width: 60px;
-    height: 30px;
+    width: 45px;
+    height: 25px;
   }
 }
+
+.hire {
+  max-width: 600px; 
+  margin: 0 auto; 
+  padding: 20px;
+  border-radius: 10px; 
+}
+
+.hire h1 {
+  text-align: center;
+  color: #FD971F;; 
+}
+
+
+.hire label {
+  display: block;
+  margin-top: 10px;
+  color: #A6E22E; 
+}
+
+.hire input[type="text"],
+.hire textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc; 
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.hire input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #3a3f4d; 
+  color: #fff; 
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.hire input[type="submit"]:hover {
+  background-color: #1d274f; 
+}
+
+.hire textarea {
+  resize: vertical; 
+}
+
+.hire input[type="submit"] {
+  width: 50%; 
+  padding: 10px;
+  background-color: #A6E22E; 
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.hire input[type="submit"]:hover {
+  background-color: #FD971F; 
+}
+
+
+
+
+
+
