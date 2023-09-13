@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $messageBody = "First Name: $fname\nLast Name: $lname\nCompany: $company\nEmail: $email\nMessage:\n$message";
     
     // Additional headers
-    $headers = "From: $email\r\n";
+    $headers = "From: $fname $lname <$email>\r\n";
     
     // Send the email
     if (mail($to, $subject, $messageBody, $headers)) {
