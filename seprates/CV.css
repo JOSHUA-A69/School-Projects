@@ -1,80 +1,84 @@
+/* Universal styles for margins, padding, and text color */
 body, h1, h2, h3, h4, h5, p, ul, li {
   margin: 15px;
   padding: 45px;
   color: #fff; /* Set text color to white */
 }
 
+/* Body styles */
 body {
-  background: rgb(58,63,77);
-  background: linear-gradient(69deg, rgba(58,63,77,1) 0%, rgba(13,20,41,1) 100%);
+  background: rgb(58, 63, 77);
+  background: linear-gradient(69deg, rgba(58, 63, 77, 1) 0%, rgba(13, 20, 41, 1) 100%);
   font-family: Georgia, 'Times New Roman', Times, serif;
   margin: 0;
 }
 
+/* Container styles */
 .container {
   max-width: 800px;
   margin: 20px auto;
   padding: 20px;
 }
 
- .head {
+/* Header styles */
+.head {
   text-align: center;
   padding: 20px;
 }
 
+/* Navigation styles */
 nav {
   margin-bottom: 15px;
   text-align: center;
+  padding: 5px;
 }
 
+/* Navigation link styles */
 nav a {
-  text-decoration: navajowhite;
+  text-decoration: none;
   color: #F8F8F2;
   font-size: 17px;
   font-family: 'Courier New', Courier, monospace;
-  margin-right: 5px;
-  margin-left: 5px;
+  margin: 15px 35px;
 }
 
+/* Navigation link hover styles */
 nav a:hover {
   color: #A6E22E;
 }
 
-nav {
-  padding: 5px;
-}
-
-nav a {
-  text-decoration: navajowhite;
-  margin: 15px 35px;
-}
-
+/* Main content styles */
 main {
   padding: 45px;
 }
 
+/* Personal info and header styles */
 .personal-info, .head {
   text-align: center;
   padding-bottom: 45px;
   transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
-h1{
+/* Heading 1 styles */
+h1 {
   font-size: 30px;
   color: #FD971F;
 }
 
- h3, h5 {
+/* Heading 2, Heading 5 styles */
+h3, h5 {
   color: #FD971F;
   font-size: 18px;
 }
 
+/* Heading 2 styles */
 h2 {
   color: #A6E22E;
   margin-bottom: 15px;
   font-size: 18px;
 }
 
+/* Paragraph styles */
 p {
   color: #E6DB74;
   margin-bottom: 15px;
@@ -82,65 +86,77 @@ p {
   line-height: 1.6;
 }
 
+/* Unordered list styles */
 ul {
   list-style-type: circle;
   color: #E6DB74;
   padding: 20px;
 }
 
+/* Strong (bold) text styles */
 strong {
   font-weight: bold;
 }
 
+/* Footer styles */
 footer {
   color: #F8F8F2;
   text-align: center;
 }
 
-#profiles {
+/* Profile links container styles */
+.profiles {
   margin: 25px;
 }
 
-#profiles a {
+/* Profile link styles */
+.profiles a {
   display: inline-block;
   margin: 0 15px;
   text-decoration: none;
   color: #F8F8F2;
 }
 
-#profiles img {
+/* Profile image styles */
+.profiles img {
   vertical-align: middle;
   border-radius: 10%;
 }
 
+/* Footer paragraph styles */
 footer p {
   margin-top: 25px;
   font-size: 16px;
 }
 
+/* Profile link container styles */
 .profile-link {
   display: inline-block;
   margin: 15px;
   text-align: center;
 }
 
+/* Profile link text styles */
 .profile-link a {
   text-decoration: none;
   color: #75715E;
   transition: color 0.3s;
 }
 
+/* Profile link image styles */
 .profile-link img {
   width: 80px;
   height: 40px;
   transition: transform 0.3s ease-out;
 }
 
+/* Profile link image hover styles */
 .profile-link img:hover {
   transform: scale(1.2);
 }
 
-.skills ul {
+/* Skills list styles */
+#skills ul {
   list-style: none;
   padding: 0;
   display: vertical;
@@ -148,141 +164,146 @@ footer p {
   align-items: center;
 }
 
-.skills li {
+/* Skills list item styles */
+#skills li {
   text-align: center;
 }
 
-.skills img {
+/* Skills list image styles */
+#skills img {
   border-radius: 20%;
 }
 
-.ABOUTME {
+/* About Me section styles */
+.aboutMe {
   color: #E6DB74;
   text-align: left;
   font-size: medium;
 }
 
+/* Header image styles */
 .head img {
   border-radius: 30%;
   opacity: 60%;
 }
 
-.Title {
+/* Title styles */
+#title {
   text-align: center;
   font-family: 'Courier New', Courier, monospace;
 }
 
-.education {
-text-align: center;
+/* Education section styles */
+#education {
+  text-align: center;
 }
 
-.work-experience {
-text-align: center;
+/* Work experience section styles */
+#work-experience {
+  text-align: center;
 }
 
-.bio {
-text-align: center;
+/* Bio section styles */
+#bio {
+  text-align: center;
 }
 
-a{
-   text-decoration: none;
-   color: #FD971F;
+/* Link styles */
+a {
+  text-decoration: none;
+  color: #FD971F;
 }
 
+/* Link hover styles */
 a:hover {
   color: #A6E22E;
 }
 
-/* Add media query for mobile */
+/* Media query for mobile devices */
 @media (max-width: 800px) {
   nav {
     margin-bottom: 10px;
     text-align: center;
   }
 
+  /* Adjust navigation container styles for mobile */
   .nav-container {
-    flex-direction: row; 
-    justify-content: center; 
+    flex-direction: row;
+    justify-content: center;
   }
 
   nav a {
-    display: inline block;
+    display: inline-block;
     margin: 0 10px;
     font-size: 14px;
     text-decoration: none;
   }
 
-  #profiles img {
+  /* Reduce profile image sizes for mobile */
+  .profiles img {
     width: 50px;
     height: 35px;
   }
 
+  /* Reduce profile link image sizes for mobile */
   .profile-link img {
     width: 50px;
     height: 35px;
   }
 }
 
-.hire {
-  max-width: 600px; 
-  margin: 0 auto; 
+/* Hire section styles */
+#hire {
+  max-width: 600px;
+  margin: 0 auto;
   padding: 20px;
-  border-radius: 10px; 
+  border-radius: 10px;
 }
 
-.hire h1 {
+/* Hire section heading styles */
+#hire h1 {
   text-align: center;
-  color: #FD971F;; 
+  color: #FD971F;
 }
 
-.hire label {
+/* Label styles for form elements */
+#hire label {
   display: block;
   margin-top: 10px;
-  color: #A6E22E; 
+  color: #A6E22E;
 }
 
-.hire input[type="text"],
-.hire textarea {
+/* Input and textarea styles for form elements */
+#hire input[type="text"],
+#hire textarea {
   width: 100%;
   padding: 10px;
   margin-top: 5px;
-  border: 1px solid #ccc; 
+  border: 1px solid #ccc;
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.8);
 }
 
-.hire input[type="submit"] {
+/* Submit button styles for form */
+#hire input[type="submit"] {
   width: 100%;
   padding: 10px;
-  background-color: #3a3f4d; 
-  color: #fff; 
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.hire input[type="submit"]:hover {
-  background-color: #1d274f; 
-}
-
-.hire textarea {
-  resize: vertical; 
-}
-
-.hire input[type="submit"] {
-  width: 50%; 
-  padding: 10px;
-  background-color: #A6E22E; 
+  background-color: #3a3f4d;
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
-.hire input[type="submit"]:hover {
-  background-color: #FD971F; 
+/* Submit button hover styles for form */
+#hire input[type="submit"]:hover {
+  background-color: #1d274f;
 }
 
+/* Textarea resize style */
+#hire textarea {
+ resize: vertical;
+}
 
 
 
