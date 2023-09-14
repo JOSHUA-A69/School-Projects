@@ -8,7 +8,7 @@ void acceptletters(char lett[], int letters){
 		scanf(" %c",&lett[ctr]);
 		if(lett[ctr] != 'A' && lett[ctr] !='a' && lett[ctr] != 'B' && lett[ctr] != 'b' && lett[ctr] != 'C' && lett[ctr] != 'c') {
 		printf("invalid input!");
-		break;
+		ctr--;
    }
  }
 }
