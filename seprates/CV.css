@@ -1,3 +1,69 @@
+/* Media query for mobile devices */
+@media (max-width: 800px) {
+  nav {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  /* Adjust navigation container styles for mobile */
+  .nav-container {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  nav a {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 14px;
+    text-decoration: none;
+  }
+
+  /* Reduce profile image sizes for mobile */
+  .profiles img {
+    width: 50px;
+    height: 35px;
+  }
+
+  /* Reduce profile link image sizes for mobile */
+  .profile-link img {
+    width: 50px;
+    height: 35px;
+  }
+}
+
+/* Media query for tablets/iPads */
+@media (min-width: 801px) and (max-width: 1024px) {
+  /* Tablet-specific CSS styles */
+
+  nav {
+    /* Adjust navigation styles for tablets */
+    margin-bottom: 20px;
+    text-align: left;
+  }
+
+  .nav-container {
+    /* Center align navigation items for tablets */
+    justify-content: center;
+  }
+
+  nav a {
+    /* Increase font size for better readability on tablets */
+    font-size: 16px;
+  }
+
+  /* Increase profile image sizes for tablets */
+  .profiles img {
+    width: 80px;
+    height: 56px;
+  }
+
+  /* Increase profile link image sizes for tablets */
+  .profile-link img {
+    width: 80px;
+    height: 56px;
+  }
+}
+
 /* Universal styles for margins, padding, and text color */
 body, h1, h2, h3, h4, h5, p, ul, li {
   margin: 15px;
@@ -217,39 +283,6 @@ a {
 /* Link hover styles */
 a:hover {
   color: #A6E22E;
-}
-
-/* Media query for mobile devices */
-@media (max-width: 800px) {
-  nav {
-    margin-bottom: 10px;
-    text-align: center;
-  }
-
-  /* Adjust navigation container styles for mobile */
-  .nav-container {
-    flex-direction: row;
-    justify-content: center;
-  }
-
-  nav a {
-    display: inline-block;
-    margin: 0 10px;
-    font-size: 14px;
-    text-decoration: none;
-  }
-
-  /* Reduce profile image sizes for mobile */
-  .profiles img {
-    width: 50px;
-    height: 35px;
-  }
-
-  /* Reduce profile link image sizes for mobile */
-  .profile-link img {
-    width: 50px;
-    height: 35px;
-  }
 }
 
 /* Hire section styles */
