@@ -226,6 +226,7 @@ footer p {
   list-style: none;
   padding: 0;
   display: vertical;
+  align: left;
   justify-content: space-around;
   align-items: center;
 }
