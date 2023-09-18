@@ -3,6 +3,7 @@
 
 // Displays all Elements 
 void displayAllElements(int rowSize, int colSize, int elements[rowSize][colSize]) {
+    printf("\t\tALL ELEMENTS");
     for (int row = 0; row < rowSize; row++) {
         for (int col = 0; col < colSize; col++) {
             printf("%d\t", elements[row][col]);
