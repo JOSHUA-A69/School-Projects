@@ -2,6 +2,7 @@
 #include <stdlib.h> 
 
 // Displays all Elements 
+ printf("\t\tALL ELEMENTS");
 void displayAllElements(int rowSize, int colSize, int elements[rowSize][colSize]) {
     for (int row = 0; row < rowSize; row++) {
         for (int col = 0; col < colSize; col++) {
