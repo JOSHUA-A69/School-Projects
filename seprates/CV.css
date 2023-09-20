@@ -240,6 +240,11 @@ footer p {
   border-radius: 20%;
 }
 
+#skills img:hover {
+  transform: scale(1.2);
+  transition: transform 0.3s ease-out;
+}
+
 /* About Me section styles */
 .aboutMe {
   color: #E6DB74;
