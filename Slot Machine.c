@@ -47,6 +47,44 @@ struct Player* findPlayerByName(const char* name) {
     return NULL; // Player not found
 }
 
+// Function to remove a player by name
+void removePlayer(const char* name) {
+    struct Player* current = topPlayer;
+    struct Player* prev = NULL;
+
+    while (current != NULL) {
+        if (strcmp(current->name, name) == 0) {
+            if (prev != NULL) {
+                prev->next = current->next;
+            } else {
+                topPlayer = current->next;
+            }
+            free(current);
+            printf("\n\n\t\t\t\t\tPlayer %s removed successfully!\n", name);
+            return;
+        }
+        prev = current;
+        current = current->next;
+    }
+
+    printf("\n\n\t\t\t\t\tPlayer %s not found.\n", name);
+}
+
+// Function to display current players
+void displayCurrentPlayers() {
+    struct Player* current = topPlayer;
+    if (current == NULL) {
+        printf("\n\n\t\t\t\t\tNo players registered.\n");
+        return;
+    }
+
+    printf("\n\n\t\t\t\t\tCurrent Players:\n");
+    while (current != NULL) {
+        printf("\t\t\t\t\t- %s\n", current->name);
+        current = current->next;
+    }
+}
+
 // Function to spin the slot machine and return the reels
 void spin(char reels[COLS][ROWS]) {
     char symbols[] = SYMBOLS; // Symbols pool
@@ -119,7 +157,7 @@ void printRows(char rows[ROWS][COLS]) {
 
 // Function to play the slot machine game
 void playGame() {
-    char playerName[50];
+     char playerName[50];
     printf("\n\n\t\t\t\t\tEnter your name: ");
     scanf("%s", playerName);
 
@@ -190,7 +228,6 @@ void playGame() {
         playGame(); // Play another round
     }
 }
-
 // Function to display player statistics
 void displayPlayerStats() {
     char playerName[50];
@@ -229,7 +266,9 @@ int main() {
         printf("\t\t\t\t\t1. Register/Select Player\n");
         printf("\t\t\t\t\t2. Play Slot Machine\n");
         printf("\t\t\t\t\t3. Display Player Stats\n");
-        printf("\t\t\t\t\t4. Quit\n");
+        printf("\t\t\t\t\t4. Display Current Players\n");
+        printf("\t\t\t\t\t5. Remove Player\n");
+        printf("\t\t\t\t\t6. Quit\n");
 
         int choice;
         printf("\t\t\t\t\tEnter your choice: ");
@@ -264,6 +303,17 @@ int main() {
                 displayPlayerStats();
                 break;
             case 4:
+                displayCurrentPlayers();
+                break;
+            case 5:
+                {
+                    char playerName[50];
+                    printf("\n\n\t\t\t\t\tEnter the name of the player to remove: ");
+                    scanf("%s", playerName);
+                    removePlayer(playerName);
+                }
+                break;
+            case 6:
                 printf("\n\n\t\t\t\t\tThank you for playing!\n\t\t\t\t\tApplication Developed by:\n\t\t\t\t\tJoshua Uy&Jake Perez");
                 exit(0);
             default:
@@ -274,4 +324,3 @@ int main() {
 
     return 0;
 }
-
