@@ -24,11 +24,11 @@ struct Player {
 // Global pointer to the top of the player stack
 struct Player* topPlayer = NULL;
 
-// Function to push a new player onto the stack
+// Function to push a new player onto the stack with a starting balance of 1000
 void pushPlayer(const char* name) {
     struct Player* newPlayer = (struct Player*)malloc(sizeof(struct Player));
     strcpy(newPlayer->name, name);
-    newPlayer->balance = 0;
+    newPlayer->balance = 1000; // Set starting balance to 1000
     newPlayer->gamesPlayed = 0;
     newPlayer->totalWinnings = 0;
     newPlayer->next = topPlayer;
@@ -80,7 +80,7 @@ void displayCurrentPlayers() {
 
     printf("\n\n\t\t\t\t\tCurrent Players:\n");
     while (current != NULL) {
-        printf("\t\t\t\t\t- %s\n", current->name);
+        printf("\n\n\t\t\t\t\t- %s (Balance: PHP %.2f)\n", current->name, current->balance);
         current = current->next;
     }
 }
@@ -155,9 +155,9 @@ void printRows(char rows[ROWS][COLS]) {
     }
 }
 
-// Function to play the slot machine game
+ // Function to play the slot machine game
 void playGame() {
-     char playerName[50];
+    char playerName[50];
     printf("\n\n\t\t\t\t\tEnter your name: ");
     scanf("%s", playerName);
 
@@ -167,67 +167,79 @@ void playGame() {
         return;
     }
 
-    float depositAmount;
     while (1) {
-        printf("\n\n\t\t\t\t\tEnter a deposit amount in PHP: ");
-        if (scanf("%f", &depositAmount) != 1 || depositAmount <= 0) {
-            printf("\n\n\t\t\t\t\tInvalid deposit amount, please try again!\n");
-            while (getchar() != '\n'); // Clear input buffer
-        } else {
-            currentPlayer->balance += depositAmount;
-            printf("\n\n\t\t\t\t\tYou have successfully deposited PHP %.2f. Your new balance is PHP %.2f.\n", depositAmount, currentPlayer->balance);
+        printf("\n\n\t\t\t\t\tYou have a starting balance of PHP 1000. Your current balance is PHP %.2f\n", currentPlayer->balance);
+
+        // Check if the player's balance is zero or negative
+        if (currentPlayer->balance <= 0) {
+            printf("\n\n\t\t\t\t\tYou are out of funds. Cannot play anymore.\n");
             break;
         }
-    }
 
-    float bet = 0;
-    int numberOfLines = 0;
+        float bet;
+        int numberOfLines;
 
-    while (1) {
-        numberOfLines = 0;
-        printf("\n\n\t\t\t\t\tEnter the number of lines to bet on (1-3): ");
-        if (scanf("%d", &numberOfLines) != 1 || numberOfLines <= 0 || numberOfLines > 3) {
-            printf("\n\n\t\t\t\t\tInvalid number of lines, please try again!\n");
-            while (getchar() != '\n'); // Clear input buffer
-        } else {
-            break;
+        // Get the bet per line
+        while (1) {
+            printf("\n\n\t\t\t\t\tEnter the bet per line in PHP (Maximum bet: PHP %.2f): ", currentPlayer->balance);
+            if (scanf("%f", &bet) != 1 || bet <= 0 || bet > currentPlayer->balance) {
+                printf("\n\n\t\t\t\t\tInvalid bet, please try again!\n");
+                while (getchar() != '\n'); // Clear input buffer
+            } else {
+                break;
+            }
         }
-    }
 
-    while (1) {
-        printf("\n\n\t\t\t\t\tEnter the bet per line in PHP (Maximum bet: PHP %.2f): ", currentPlayer->balance);
-        if (scanf("%f", &bet) != 1 || bet <= 0 || bet > currentPlayer->balance / numberOfLines) {
-            printf("\n\n\t\t\t\t\tInvalid bet, please try again!\n");
-            while (getchar() != '\n'); // Clear input buffer
-        } else {
-            break;
+        // Get the number of lines to bet on
+        while (1) {
+            printf("\n\n\t\t\t\t\tEnter the number of lines to bet on (1-3): ");
+            if (scanf("%d", &numberOfLines) != 1 || numberOfLines <= 0 || numberOfLines > 3) {
+                printf("\n\n\t\t\t\t\tInvalid number of lines, please try again!\n");
+                while (getchar() != '\n'); // Clear input buffer
+            } else {
+                break;
+            }
         }
-    }
 
-    currentPlayer->balance -= bet * numberOfLines;
+        // Calculate the total bet amount
+        float totalBet = bet * numberOfLines;
 
-    char reels[COLS][ROWS];
-    spin(reels);
+        // Check if the player has sufficient balance for the bet
+        if (totalBet > currentPlayer->balance) {
+            printf("\n\n\t\t\t\t\tInsufficient balance to place this bet. Please try again with a lower bet.\n");
+            continue; // Restart the loop
+        }
 
-    char rows[ROWS][COLS];
-    transpose(reels, rows);
-    printRows(rows);
+        // Deduct the total bet amount from the player's balance
+        currentPlayer->balance -= totalBet;
 
-    float winnings = getWinnings(rows, bet, numberOfLines);
-    currentPlayer->balance += winnings;
-    currentPlayer->gamesPlayed++;
-    currentPlayer->totalWinnings += winnings;
+        char reels[COLS][ROWS];
+        spin(reels);
 
-    printf("\n\n\t\t\t\t\tYou won PHP %.2f\n", winnings);
-    printf("\n\n\t\t\t\t\tYour new balance is PHP %.2f\n", currentPlayer->balance);
+        char rows[ROWS][COLS];
+        transpose(reels, rows);
+        printRows(rows);
 
-    char playAgain;
-    printf("\n\n\t\t\t\t\tDo you want to play again? (y/n): ");
-    scanf(" %c", &playAgain);
-    if (playAgain == 'y' || playAgain == 'Y') {
-        playGame(); // Play another round
+        float winnings = getWinnings(rows, bet, numberOfLines);
+
+        // Add the winnings to the player's balance
+        currentPlayer->balance += winnings;
+
+        currentPlayer->gamesPlayed++;
+        currentPlayer->totalWinnings += winnings;
+
+        printf("\n\n\t\t\t\t\tYou won PHP %.2f\n", winnings);
+        printf("\n\n\t\t\t\t\tYour new balance is PHP %.2f\n", currentPlayer->balance);
+
+        char playAgain;
+        printf("\n\n\t\t\t\t\tDo you want to play again? (y/n): ");
+        scanf(" %c", &playAgain);
+        if (playAgain == 'n' || playAgain == 'N') {
+            break; // Exit the game loop if the player doesn't want to play anymore
+        }
     }
 }
+
 // Function to display player statistics
 void displayPlayerStats() {
     char playerName[50];
@@ -293,6 +305,7 @@ int main() {
                         pushPlayer(playerName);
                         numPlayers++; // Increment the number of registered players
                         printf("\n\n\t\t\t\t\tPlayer registered successfully!\n");
+                        printf("\n\n\t\t\t\t\tYou have a starting balance of PHP 1000.\n");
                     }
                 }
                 break;
