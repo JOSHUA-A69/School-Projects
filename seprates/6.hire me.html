@@ -7,35 +7,6 @@
     <link rel="stylesheet" href="CV.css">
 </head>
 <body>
-    <?php
-    if (!empty($_POST["submit"])) {
-        $fname = $_POST["fname"];
-        $lname = $_POST["lname"];
-        $company = $_POST["company"];
-        $email = $_POST["email"];
-        $message = $_POST["comment"];
-
-    
-        $toEmail = "ujoshua368@gmail.com";
-
-        $subject = "New Contact Form Submission";
-        $mailHeaders = "From: $email\r\n";
-
-        $messageBody = "First name: $fname\r\n" .
-                       "Last name: $lname\r\n" .
-                       "Company: $company\r\n" .
-                       "Email: $email\r\n" .
-                       "Message: $message";
-
-        // Send the email
-        if (mail($toEmail, $subject, $messageBody, $mailHeaders)) {
-            echo "Your message has been sent successfully.";
-        } else {
-            echo "Sorry, there was an error sending your message.";
-        }
-    }
-    ?>
-
     <form id="hire"  method="POST"  action="">
         <h1>Hire Me or Contact Me</h1>
         <label for="fname">First name:</label><br>
