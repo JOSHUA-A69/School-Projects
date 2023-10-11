@@ -3,11 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>hire me</title>
+    <title>Hire Me</title>
     <link rel="stylesheet" href="CV.css">
 </head>
 <body>
-    <form id="hire" action="sendInfotoGmail.php" method="POST">
+    <?php
+    if (!empty($_POST["submit"])) {
+        $fname = $_POST["fname"];
+        $lname = $_POST["lname"];
+        $company = $_POST["company"];
+        $email = $_POST["email"];
+        $message = $_POST["comment"];
+
+    
+        $toEmail = "ujoshua368@gmail.com";
+
+        $subject = "New Contact Form Submission";
+        $mailHeaders = "From: $email\r\n";
+
+        $messageBody = "First name: $fname\r\n" .
+                       "Last name: $lname\r\n" .
+                       "Company: $company\r\n" .
+                       "Email: $email\r\n" .
+                       "Message: $message";
+
+        // Send the email
+        if (mail($toEmail, $subject, $messageBody, $mailHeaders)) {
+            echo "Your message has been sent successfully.";
+        } else {
+            echo "Sorry, there was an error sending your message.";
+        }
+    }
+    ?>
+
+    <form id="hire"  method="POST"  action="sendInfotoGmail.php">
         <h1>Hire Me or Contact Me</h1>
         <label for="fname">First name:</label><br>
         <input type="text" id="fname" name="fname" placeholder="First name"><br>
@@ -15,12 +44,13 @@
         <input type="text" id="lname" name="lname" placeholder="Last name"><br>
         <label for="company">Company:</label><br>
         <input type="text" id="company" name="company" placeholder="Company"><br>
-        <label for="Email">Email:</label><br>
+        <label for="email">Email:</label><br>
         <input type="text" id="email" name="email" placeholder="Email"><br>
-        <label for="message">Message:</label><br>
-        <textarea rows="4" cols="50" name="comment" form="hire">
-            Enter message here...</textarea>
-            <input type="submit">
-      </form>
+        <label for="comment">Message:</label><br>
+        <textarea id="comment" rows="4" cols="50" name="comment" form="hire">
+            Enter message here...
+        </textarea><br>
+        <input type="submit" name="submit" value="Submit">
+    </form>
 </body>
 </html>
