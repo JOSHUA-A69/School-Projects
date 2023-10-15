@@ -377,11 +377,10 @@ a:hover {
  resize: vertical;
 }
 
-#hire a{
-  display: flex;
-}
-
 #clubs nav{
   display: flex;
 }
 
+ .navHire{
+  display: flex;
+}
