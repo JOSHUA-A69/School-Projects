@@ -225,8 +225,8 @@ footer p {
 
 /* Profile link image styles */
 .profile-link img {
-  width: 80px;
-  height: 40px;
+  width: 45px;
+  height: 50px;
   transition: transform 0.3s ease-out;
 }
 
