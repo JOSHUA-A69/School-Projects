@@ -384,3 +384,59 @@ a:hover {
  .navHire{
   display: flex;
 }
+
+h1 {
+  font-size: 30px;
+  color: #FD971F;
+  transition: font-size 0.3s; 
+}
+
+h1:hover {
+  font-size: 36px;
+}
+
+h2, h3 {
+  font-size: 18px;
+  color: #FD971F;
+  transition: font-size 0.3s; 
+}
+
+h2:hover, h3:hover {
+  font-size: 22px; 
+}
+
+p {
+  color: #E6DB74;
+  font-size: 18px;
+  transition: color 0.3s; 
+}
+
+p:hover {
+  color: #A6E22E; 
+}
+
+h1 {
+  font-size: 30px;
+  color: #FD971F;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  transition: text-shadow 0.3s; 
+}
+
+h1:hover {
+  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+}
+
+nav a {
+  text-decoration: none;
+  color: #F8F8F2;
+  font-size: 17px;
+  font-family: 'Courier New', Courier, monospace;
+  margin: 15px 35px;
+  transition: color 0.3s; 
+  transition: font-size 0.3s;
+}
+
+nav a:hover {
+  color: #A6E22E;
+  font-size: 20px;
+}
