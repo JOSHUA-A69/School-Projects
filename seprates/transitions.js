@@ -46,15 +46,3 @@ document.getElementById("goTo6-hire-me").addEventListener("click", function (e) 
   }, 500);
 });
 
-document.body.addEventListener("click", function (e) {
-  if (e.target.id === "goToIndex") {
-    // Prevent the default link behavior
-    e.preventDefault();
-    // Add a zoom-in class to the body
-    document.body.classList.add("zoom-in");
-    // Wait for the transition to complete and then navigate to index.html
-    setTimeout(function () {
-      window.location.href = "index.html";
-    }, 500);
-  }
-});
