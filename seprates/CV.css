@@ -20,14 +20,14 @@
 
   /* Reduce profile image sizes for mobile */
   .profiles img {
-    width: 50px;
-    height: 35px;
+    width: 35px;
+    height: 40px;
   }
 
   /* Reduce profile link image sizes for mobile */
   .profile-link img {
-    width: 50px;
-    height: 35px;
+    width: 35px;
+    height: 40px;
   }
 }
 
