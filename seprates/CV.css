@@ -386,12 +386,6 @@ a:hover {
   display: flex;
 }
 
-p {
-  color: #E6DB74;
-  font-size: 18px;
-  transition: color 0.3s; 
-}
-
 p:hover {
   color: #A6E22E; 
 }
@@ -408,5 +402,7 @@ nav a {
 
 nav a:hover {
   color: #A6E22E;
+  box-shadow: 0 0 10px rgba(166, 226, 46, 0.7);
+  transform: scale(1.1);
   font-size: 20px;
 }
