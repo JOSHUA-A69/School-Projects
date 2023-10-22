@@ -311,7 +311,11 @@ footer p {
 }
 
 #bio nav{
-  display:flex;
+  display: flex;
+}
+
+.aboutMe{
+  text-align: left;
 }
 
 /* Link styles */
