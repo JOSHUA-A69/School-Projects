@@ -20,8 +20,8 @@
 
   /* Reduce profile image sizes for mobile */
   .profiles img {
-    width: 35px;
-    height: 40px;
+    width: 25px;
+    height: 35px;
   }
 
   /* Reduce profile link image sizes for mobile */
@@ -226,8 +226,9 @@ footer p {
 
 /* Profile link image styles */
 .profile-link img {
-  width: 45px;
+  width: 40px;
   height: 50px;
+  margin: 45px;
   transition: transform 0.3s ease-out;
 }
 
@@ -273,6 +274,10 @@ footer p {
   color: #E6DB74;
   text-align: left;
   font-size: medium;
+}
+
+.aboutMe:hover{
+  color:#A6E22E
 }
 
 /* Header image styles */
