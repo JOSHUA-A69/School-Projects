@@ -1,417 +1,410 @@
-/* Variables */
-:root {
-  --text-color: #fff;
-  --accent-color: #FD971F;
-  --link-color: #FD971F;
-  --link-hover-color: #A6E22E;
-  --background-gradient-start: rgba(17, 33, 58, 1);
-  --background-gradient-end: rgba(38, 62, 74, 1);
-  --nav-link-transition-speed: 0.3s;
-}
-/* Universal styles */
-body, h1, h2, h3, h4, h5, p, ul, li {
-  margin: 15px;
-  padding: 45px;
-  color: var(--text-color);
-}
-
-/* Body styles */
-body {
-  background: var(--background-gradient-start);
-  background: linear-gradient(88deg, var(--background-gradient-start) 0%, var(--background-gradient-end) 100%);
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  margin: 0;
-  transform: scale(1);
-  opacity: 1;
-  transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out, opacity 0.5s ease-in-out;
-}
-
-/* Header styles */
-.head {
-  text-align: center;
-  padding: 20px;
-}
-
-/* Navigation styles */
-nav {
-  margin-bottom: 15px;
-  text-align: center;
-  padding: 5px;
-}
-
-/* Navigation link styles */
-nav a {
-  text-decoration: none;
-  color: var(--link-color);
-  font-size: 17px;
-  font-family: 'Courier New', Courier, monospace;
-  margin: 15px 35px;
-  transition: color var(--nav-link-transition-speed);
-}
-
-/* Navigation link hover styles */
-nav a:hover {
-  color: var(--link-hover-color);
-  box-shadow: 0 0 10px rgba(166, 226, 46, 0.7);
-  transform: scale(1.1);
-  font-size: 20px;
-}
-
-/* Personal info and header styles */
-.personal-info,
-.head {
-  text-align: center;
-  padding-bottom: 45px;
-}
-
-/* Heading styles */
-h1 {
-  font-size: 30px;
-  color: var(--accent-color);
-}
-
-h2 {
-  color: var(--link-hover-color);
-  margin-bottom: 15px;
-  font-size: 18px;
-}
-
-h3,
-h5 {
-  color: var(--accent-color);
-  font-size: 18px;
-}
-
-/* Paragraph styles */
-p {
-  color: #E6DB74;
-  margin-bottom: 15px;
-  font-size: 18px;
-  line-height: 1.6;
-}
-
-/* Unordered list styles */
-ul {
-  list-style-type: circle;
-  color: #E6DB74;
-  padding: 20px;
-}
-
-/* Strong (bold) text styles */
-strong {
-  font-weight: bold;
-}
-
-/* Footer styles */
-footer {
-  color: var(--text-color);
-  text-align: center;
-}
-
-/* Profile links container styles */
-.profiles {
-  margin: 25px;
-}
-
-/* Profile link styles */
-.profiles a {
-  display: inline-block;
-  margin: 0 15px;
-  text-decoration: none;
-  color: var(--text-color);
-}
-
-/* Profile image styles */
-.profiles img {
-  border-radius: 10%;
-}
-
-/* Footer paragraph styles */
-footer p {
-  margin-top: 25px;
-  font-size: 16px;
-}
-
-/* Profile link container styles */
-.profile-link {
-  display: inline-block;
-  margin: 15px;
-  text-align: center;
-}
-
-/* Profile link text styles */
-.profile-link a {
-  text-decoration: none;
-  color: #75715E;
-  transition: color 0.3s;
-}
-
-/* Profile link image styles */
-.profile-link img {
-  width: 40px;
-  height: 50px;
-  margin: 45px;
-  transition: transform 0.3s ease-out;
-}
-
-/* Profile link image hover styles */
-.profile-link img:hover {
-  transform: scale(1.2);
-}
-
-/* Skills list styles */
-#skills ul {
-  list-style: none;
-  padding: 0;
-  display: vertical;
-  justify-content: space-around;
-  align-items: center;
-}
-
-/* Skills list item styles */
-#skills li {
-  text-align: center;
-}
-
-/* Skills list image styles */
-#skills img {
-  border-radius: 20%;
-}
-
-#skills img:hover {
-  transform: scale(1.2);
-  transition: transform 0.3s ease-out;
-}
-
-#skills,
-h2 {
-  text-align: center;
-}
-
-#skills nav {
-  display: flex;
-}
-
-/* About Me section styles */
-.aboutMe {
-  color: #E6DB74;
-  text-align: left;
-  font-size: medium;
-}
-
-.aboutMe:hover {
-  color: var(--link-hover-color);
-}
-
-/* Header image styles */
-.head img {
-  border-radius: 25%;
-  opacity: 60%;
-}
-
-/* Title styles */
-#title {
-  text-align: center;
-  font-family: 'Courier New', Courier, monospace;
-}
-
-/* Education section styles */
-#education {
-  text-align: center;
-}
-
-#education nav {
-  display: flex;
-}
-
-/* Work experience section styles */
-#work-experience {
-  text-align: center;
-}
-
-#work-experience nav {
-  display: flex;
-}
-
-/* Bio section styles */
-#bio {
-  text-align: center;
-}
-
-#bio nav {
-  display: flex;
-}
-
-.aboutMe {
-  text-align: left;
-  font-size: small;
-}
-
-/* Link styles */
-a {
-  text-decoration: none;
-  color: var(--accent-color);
-}
-
-/* Link hover styles */
-a:hover {
-  color: var(--link-hover-color);
-}
-
-/* Hire section styles */
-#hire {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-/* Hire section heading styles */
-#hire h1 {
-  text-align: center;
-  color: var(--accent-color);
-}
-
-/* Label styles for form elements */
-#hire label {
-  display: block;
-  margin-top: 10px;
-  color: var(--link-hover-color);
-}
-
-/* Input and textarea styles for form elements */
-#hire input[type="text"],
-#hire textarea {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.8);
-}
-
-/* Submit button styles for form */
-#hire input[type="submit"] {
-  width: 100%;
-  padding: 10px;
-  background-color: #3a3f4d;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-/* Submit button hover styles for form */
-#hire input[type="submit"]:hover {
-  background-color: #1d274f;
-}
-
-/* Textarea resize style */
-#hire textarea {
-  resize: vertical;
-}
-
-#clubs nav {
-  display: flex;
-}
-
-.navHire {
-  display: flex;
-}
-
-p:hover {
-  color: var(--link-hover-color);
-}
-
-nav a {
-  text-decoration: none;
-  color: var(--text-color);
-  font-size: 18px;
-  font-family: 'Courier New', Courier, monospace;
-  margin: 15px 35px;
-  transition: color 0.3s;
-}
-
-nav a:hover {
-  color: var(--link-hover-color);
-  box-shadow: 0 0 10px rgba(166, 226, 46, 0.7);
-  transform: scale(1.1);
-  font-size: 20px;
-}
-
 /* Media query for mobile devices */
 @media (max-width: 800px) {
+    nav {
+      margin-bottom: 10px;
+      text-align: center;
+    }
+  
+    /* Adjust navigation container styles for mobile */
+    .nav-container {
+      flex-direction: row;
+      justify-content: center;
+    }
+  
+    nav a {
+      display: inline-block;
+      margin: 0 10px;
+      font-size: 14px;
+      text-decoration: none;
+    }
+  
+    /* Reduce profile image sizes for mobile */
+    .profiles img {
+      width: 25px;
+      height: 35px;
+    }
+  
+    /* Reduce profile link image sizes for mobile */
+    .profile-link img {
+      width: 25px;
+      height: 35px;
+    }
+  }
+  
+  /* Media query for tablets/iPads */
+  @media (min-width: 801px) and (max-width: 1024px) {
+    /* Tablet-specific CSS styles */
+  
+    nav {
+      /* Adjust navigation styles for tablets */
+      margin-bottom: 20px;
+      text-align: left;
+    }
+  
+    .nav-container {
+      /* Center align navigation items for tablets */
+      justify-content: center;
+    }
+  
+    nav a {
+      /* Increase font size for better readability on tablets */
+      font-size: 16px;
+    }
+  
+    /* Increase profile image sizes for tablets */
+    .profiles img {
+      width: 80px;
+      height: 56px;
+    }
+  
+    /* Increase profile link image sizes for tablets */
+    .profile-link img {
+      width: 80px;
+      height: 56px;
+    }
+  }
+  
+  /* Universal styles for margins, padding, and text color */
+  body, h1, h2, h3, h4, h5, p, ul, li {
+    margin: 15px;
+    padding: 45px;
+    color: #fff; /* Set text color to white */
+  }
+  
+  /* Body styles */
+  body {
+    background: rgb(17,33,58);
+    background: linear-gradient(88deg, rgba(17,33,58,1) 0%, rgba(38,62,74,1) 100%);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
+    transform: scale(1);
+    opacity: 1;
+    transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  }
+  
+  body.zoom-in {
+    transform: scale(1.1);
+    opacity: 0;
+    transition: transform 0.3s linear, opacity 0.3s linear;
+  }
+  
+  .zoom-in.zoomed {
+    transform: scale(1.1); 
+    opacity: 0; 
+  }
+  
+  /* Container styles */
+  .container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+  }
+  
+  /* Header styles */
+  .head {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  /* Navigation styles */
   nav {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    text-align: center;
+    padding: 5px;
+  }
+  
+  /* Navigation link styles */
+  nav a {
+    text-decoration: none;
+    color: #F8F8F2;
+    font-size: 17px;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 15px 35px;
+  }
+  
+  /* Navigation link hover styles */
+  nav a:hover {
+    color: #A6E22E;
+  }
+  
+  /* Personal info and header styles */
+  .personal-info, .head {
+    text-align: center;
+    padding-bottom: 45px;
+  }
+  
+  /* Heading 1 styles */
+  h1 {
+    font-size: 30px;
+    color: #FD971F;
+  }
+  
+  /* Heading 2, Heading 5 styles */
+  h3, h5 {
+    color: #FD971F;
+    font-size: 18px;
+  }
+  
+  /* Heading 2 styles */
+  h2 {
+    color: #A6E22E;
+    margin-bottom: 15px;
+    font-size: 18px;
+  }
+  
+  /* Paragraph styles */
+  p {
+    color: #E6DB74;
+    margin-bottom: 15px;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  
+  /* Unordered list styles */
+  ul {
+    list-style-type: circle;
+    color: #E6DB74;
+    padding: 20px;
+  }
+  
+  /* Strong (bold) text styles */
+  strong {
+    font-weight: bold;
+  }
+  
+  /* Footer styles */
+  footer {
+    color: #F8F8F2;
     text-align: center;
   }
-
-  /* Adjust navigation container styles for mobile */
-  .nav-container {
-    flex-direction: row;
-    justify-content: center;
+  
+  /* Profile links container styles */
+  .profiles {
+    margin: 25px;
   }
-
-  nav a {
+  
+  /* Profile link styles */
+  .profiles a {
     display: inline-block;
-    margin: 0 10px;
-    font-size: 14px;
+    margin: 0 15px;
     text-decoration: none;
+    color: #F8F8F2;
   }
-
-  /* Reduce profile image sizes for mobile */
+  
+  /* Profile image styles */
   .profiles img {
-    width: 25px;
-    height: 35px;
+    border-radius: 10%;
   }
-
-  /* Reduce profile link image sizes for mobile */
-  .profile-link img {
-    width: 25px;
-    height: 35px;
-  }
-}
-
-/* Media query for tablets/iPads */
-@media (min-width: 801px) and (max-width: 1024px) {
-  /* Tablet-specific CSS styles */
-
-  nav {
-    /* Adjust navigation styles for tablets */
-    margin-bottom: 20px;
-    text-align: left;
-  }
-
-  .nav-container {
-    /* Center align navigation items for tablets */
-    justify-content: center;
-  }
-
-  nav a {
-    /* Increase font size for better readability on tablets */
+  
+  /* Footer paragraph styles */
+  footer p {
+    margin-top: 25px;
     font-size: 16px;
   }
-
-  /* Increase profile image sizes for tablets */
-  .profiles img {
-    width: 80px;
-    height: 56px;
+  
+  /* Profile link container styles */
+  .profile-link {
+    display: inline-block;
+    margin: 15px;
+    text-align: center;
   }
-
-  /* Increase profile link image sizes for tablets */
+  
+  /* Profile link text styles */
+  .profile-link a {
+    text-decoration: none;
+    color: #75715E;
+    transition: color 0.3s;
+  }
+  
+  /* Profile link image styles */
   .profile-link img {
-    width: 80px;
-    height: 56px;
+    width: 40px;
+    height: 50px;
+    margin: 45px;
+    transition: transform 0.3s ease-out;
   }
-}
-
-body.zoom-in {
-  transform: scale(1.1);
-  opacity: 0;
-  transition: transform 0.3s linear, opacity 0.3s linear;
-}
-
-.zoom-in.zoomed {
-  transform: scale(1.1); 
-  opacity: 0; 
-}
+  
+  /* Profile link image hover styles */
+  .profile-link img:hover {
+    transform: scale(1.2);
+  }
+  
+  /* Skills list styles */
+  #skills ul {
+    list-style: none;
+    padding: 0;
+    display: vertical;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  /* Skills list item styles */
+  #skills li {
+    text-align: center;
+  }
+  
+  /* Skills list image styles */
+  #skills img {
+    border-radius: 20%;
+  }
+  
+  #skills img:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s ease-out;
+  }
+  
+  #skills,h2{
+    text-align: center;
+  }
+  
+  #skills nav{
+    display: flex;
+  }
+  
+  /* About Me section styles */
+  .aboutMe {
+    color: #E6DB74;
+    text-align: left;
+    font-size: medium;
+  }
+  
+  .aboutMe:hover{
+    color:#A6E22E
+  }
+  
+  /* Header image styles */
+  .head img {
+    border-radius: 25%;
+    opacity: 60%;
+  }
+  
+  /* Title styles */
+  #title {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  /* Education section styles */
+  #education {
+    text-align: center;
+  }
+  
+  #education nav{
+    display: flex;
+  }
+  
+  /* Work experience section styles */
+  #work-experience {
+    text-align: center;
+  }
+  
+  #work-experience nav{
+    display:flex;
+  }
+  
+  /* Bio section styles */
+  #bio {
+    text-align: center;
+  }
+  
+  #bio nav{
+    display: flex;
+  }
+  
+  .aboutMe{
+    text-align: left;
+    font-size: small;
+  }
+  
+  /* Link styles */
+  a {
+    text-decoration: none;
+    color: #FD971F;
+  }
+  
+  /* Link hover styles */
+  a:hover {
+    color: #A6E22E;
+  }
+  
+  /* Hire section styles */
+  #hire {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  /* Hire section heading styles */
+  #hire h1 {
+    text-align: center;
+    color: #FD971F;
+  }
+  
+  /* Label styles for form elements */
+  #hire label {
+    display: block;
+    margin-top: 10px;
+    color: #A6E22E;
+  }
+  
+  /* Input and textarea styles for form elements */
+  #hire input[type="text"],
+  #hire textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  
+  /* Submit button styles for form */
+  #hire input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #3a3f4d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Submit button hover styles for form */
+  #hire input[type="submit"]:hover {
+    background-color: #1d274f;
+  }
+  
+  /* Textarea resize style */
+  #hire textarea {
+   resize: vertical;
+  }
+  
+  #clubs nav{
+    display: flex;
+  }
+  
+   .navHire{
+    display: flex;
+  }
+  
+  p:hover {
+    color: #A6E22E; 
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #F8F8F2;
+    font-size: 18px;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 15px 35px;
+    transition: color 0.3s; 
+    transition: font-size 0.3s;
+  }
+  
+  nav a:hover {
+    color: #A6E22E;
+    box-shadow: 0 0 10px rgba(166, 226, 46, 0.7);
+    transform: scale(1.1);
+    font-size: 20px;
+  }
