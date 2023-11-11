@@ -2,10 +2,10 @@
 #include <string.h>
 
 struct BankAccount {
-	char clientName[100];
-	char clientContactNumber[12]; 
-    int accountNumber;
-    float balance; 
+char clientName[100];
+char clientContactNumber[12]; 
+int accountNumber;
+ float balance; 
 };
 
 void acceptClient(struct BankAccount *account);
