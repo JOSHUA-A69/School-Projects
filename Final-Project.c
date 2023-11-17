@@ -4,7 +4,6 @@
 #include <ctype.h>
 #include <time.h>
 
-// Constants for tracking orders
 #define MAX_ORDERS 100
 #define MAX_NAME_LENGTH 50
 #define MAX_ADDRESS_LENGTH 100
@@ -19,6 +18,16 @@ const char *items[] = {
 double prices[] = {
     450.0, 600.0, 750.0, 1050.0, 1200.0, 350.0, 450.0, 550.0, 770.0,
     1120.0, 600.0, 820.0, 1170.0, 1450.0, 130.0, 350.0, 750.0, 1100.0
+};
+
+// Struct to represent order details
+struct OrderDetails {
+    char customerName[MAX_NAME_LENGTH];
+    char itemName[MAX_NAME_LENGTH];
+    int quantity;
+    double totalCost;
+    char orderTime[30];
+    char customerAddress[MAX_ADDRESS_LENGTH];
 };
 
 // Function to display the menu
@@ -49,12 +58,7 @@ int findMenuItemByName(const char *items[], int menuSize, const char *itemName)
 
 int main()
 {
-    char customerNames[MAX_ORDERS][MAX_NAME_LENGTH];
-    char itemNames[MAX_ORDERS][MAX_NAME_LENGTH];
-    int quantities[MAX_ORDERS];
-    double totalCosts[MAX_ORDERS];
-    char orderTimes[MAX_ORDERS][30];
-    char customerAddresses[MAX_ORDERS][MAX_ADDRESS_LENGTH];
+    struct OrderDetails orders[MAX_ORDERS];
 
     int menuSize = sizeof(items) / sizeof(items[0]);
 
@@ -67,24 +71,24 @@ int main()
     do
     {
         time_t now = time(NULL);
-        strftime(orderTimes[orderCount], sizeof(orderTimes[orderCount]), "%Y-%m-%d %H:%M:%S", localtime(&now));
+        strftime(orders[orderCount].orderTime, sizeof(orders[orderCount].orderTime), "%Y-%m-%d %H:%M:%S", localtime(&now));
 
         printf("\nEnter your name: ");
-        scanf("%s", customerNames[orderCount]);
+        scanf("%s", orders[orderCount].customerName);
 
         printf("Enter your address: ");
-        scanf(" %[^\n]", customerAddresses[orderCount]);
+        scanf(" %[^\n]", orders[orderCount].customerAddress);
 
         printf("Enter the name of the item you want to buy: ");
-        scanf(" %[^\n]", itemNames[orderCount]);
+        scanf(" %[^\n]", orders[orderCount].itemName);
 
         // Convert the input item name to lowercase
-        for (int i = 0; itemNames[orderCount][i]; i++)
+        for (int i = 0; orders[orderCount].itemName[i]; i++)
         {
-            itemNames[orderCount][i] = tolower(itemNames[orderCount][i]);
+            orders[orderCount].itemName[i] = tolower(orders[orderCount].itemName[i]);
         }
 
-        int itemIndex = findMenuItemByName(items, menuSize, itemNames[orderCount]);
+        int itemIndex = findMenuItemByName(items, menuSize, orders[orderCount].itemName);
 
         if (itemIndex == -1)
         {
@@ -93,7 +97,7 @@ int main()
         }
 
         printf("Enter quantity: ");
-        while (scanf("%d", &quantities[orderCount]) != 1 || quantities[orderCount] <= 0)
+        while (scanf("%d", &orders[orderCount].quantity) != 1 || orders[orderCount].quantity <= 0)
         {
             printf("Invalid input. Please enter a positive quantity.\n");
             while (getchar() != '\n')
@@ -101,9 +105,9 @@ int main()
             printf("Enter quantity: ");
         }
 
-        totalCosts[orderCount] = prices[itemIndex] * quantities[orderCount];
-        printf("\nTotal cost for this item: %.2fPhp\n", totalCosts[orderCount]);
-        grandTotal += totalCosts[orderCount];
+        orders[orderCount].totalCost = prices[itemIndex] * orders[orderCount].quantity;
+        printf("\nTotal cost for this item: %.2fPhp\n", orders[orderCount].totalCost);
+        grandTotal += orders[orderCount].totalCost;
 
         while (1)
         {
@@ -135,12 +139,12 @@ int main()
     for (int i = 0; i < orderCount; i++)
     {
         printf("\nOrder #%d\n", i + 1);
-        printf("Name: %s\n", customerNames[i]);
-        printf("Address: %s\n", customerAddresses[i]);
-        printf("Item: %s\n", itemNames[i]);
-        printf("Quantity: %d\n", quantities[i]);
-        printf("Total Cost: %.2fPhp\n", totalCosts[i]);
-        printf("Order Time: %s\n", orderTimes[i]);
+        printf("Name: %s\n", orders[i].customerName);
+        printf("Address: %s\n", orders[i].customerAddress);
+        printf("Item: %s\n", orders[i].itemName);
+        printf("Quantity: %d\n", orders[i].quantity);
+        printf("Total Cost: %.2fPhp\n", orders[i].totalCost);
+        printf("Order Time: %s\n", orders[i].orderTime);
     }
 
     return 0;
