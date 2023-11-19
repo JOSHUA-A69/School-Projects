@@ -23,7 +23,8 @@ double prices[] = {
 };
 
 // Struct to represent order details
-struct OrderDetails {
+struct OrderDetails
+{
     char customerName[MAX_NAME_LENGTH];
     char itemName[MAX_ITEM_NAME_LENGTH];
     int quantity;
@@ -43,14 +44,18 @@ void displayMenu(const char *items[], const double prices[], int menuSize)
     printf("                 ==MENU==                     \n");
 
     // Sort menu by price
-    for (int i = 0; i < menuSize; i++) {
+    for (int i = 0; i < menuSize; i++)
+    {
         sortedIndices[i] = i;
     }
 
     // Bubble Sort based on prices
-    for (int i = 0; i < menuSize - 1; i++) {
-        for (int j = 0; j < menuSize - i - 1; j++) {
-            if (prices[sortedIndices[j]] > prices[sortedIndices[j + 1]]) {
+    for (int i = 0; i < menuSize - 1; i++)
+    {
+        for (int j = 0; j < menuSize - i - 1; j++)
+        {
+            if (prices[sortedIndices[j]] > prices[sortedIndices[j + 1]])
+            {
                 int temp = sortedIndices[j];
                 sortedIndices[j] = sortedIndices[j + 1];
                 sortedIndices[j + 1] = temp;
@@ -84,7 +89,12 @@ int findMenuItemByName(const char *items[], int menuSize, const char *itemName)
 void editOrder(struct OrderDetails *order)
 {
     printf("\nEnter new quantity for %s: ", order->itemName);
-    scanf("%d", &order->quantity);
+    while (scanf("%d", &order->quantity) != 1 || order->quantity <= 0)
+    {
+        printf("Invalid input. Please enter a positive quantity: ");
+        while (getchar() != '\n')
+            ; // Clear input buffer
+    }
 
     // Recalculate total cost based on the new quantity
     order->totalCost = prices[findMenuItemByName(items, sizeof(items) / sizeof(items[0]), order->itemName)] * order->quantity;
@@ -140,10 +150,9 @@ void insertOrder(struct OrderDetails *orders, int *orderCount)
         printf("Enter quantity: ");
         while (scanf("%d", &newOrder.quantity) != 1 || newOrder.quantity <= 0)
         {
-            printf("Invalid input. Please enter a positive quantity.\n");
+            printf("Invalid input. Please enter a positive quantity: ");
             while (getchar() != '\n')
                 ; // Clear input buffer
-            printf("Enter quantity: ");
         }
 
         newOrder.totalCost = prices[itemIndex] * newOrder.quantity;
@@ -218,13 +227,11 @@ int main()
 
         printf("Enter the number corresponding to the item you want to buy: ");
         int choice;
-        scanf("%d", &choice);
-
-        // Validate choice
-        if (choice < 1 || choice > sizeof(items) / sizeof(items[0]))
+        while (scanf("%d", &choice) != 1 || choice < 1 || choice > sizeof(items) / sizeof(items[0]))
         {
-            printf("Invalid choice. Order insertion failed.\n");
-            continue;
+            printf("Invalid choice. Please enter a valid item number: ");
+            while (getchar() != '\n')
+                ; // Clear input buffer
         }
 
         int itemIndex = sortedIndices[choice - 1];
@@ -235,10 +242,9 @@ int main()
         printf("Enter quantity: ");
         while (scanf("%d", &orders[orderCount].quantity) != 1 || orders[orderCount].quantity <= 0)
         {
-            printf("Invalid input. Please enter a positive quantity.\n");
+            printf("Invalid input. Please enter a positive quantity: ");
             while (getchar() != '\n')
                 ; // Clear input buffer
-            printf("Enter quantity: ");
         }
 
         orders[orderCount].totalCost = prices[itemIndex] * orders[orderCount].quantity;
@@ -285,7 +291,12 @@ int main()
     printf("4. List all orders\n");
     printf("0. Exit\n");
 
-    scanf("%d", &operation);
+    while (scanf("%d", &operation) != 1 || (operation < 0 || operation > 4))
+    {
+        printf("Invalid input. Please enter a valid operation number: ");
+        while (getchar() != '\n')
+            ; // Clear input buffer
+    }
 
     while (operation != 0)
     {
@@ -295,12 +306,13 @@ int main()
             // Edit an existing order
             printf("\nEnter the number of the order to edit: ");
             int editIndex;
-            scanf("%d", &editIndex);
-            if (editIndex >= 1 && editIndex <= orderCount) {
-                editOrder(&orders[editIndex - 1]);
-            } else {
-                printf("Invalid order index. Edit failed.\n");
+            while (scanf("%d", &editIndex) != 1 || (editIndex < 1 || editIndex > orderCount))
+            {
+                printf("Invalid input. Please enter a valid order number: ");
+                while (getchar() != '\n')
+                    ; // Clear input buffer
             }
+            editOrder(&orders[editIndex - 1]);
             break;
         case 2:
             // Insert a new order
@@ -310,12 +322,13 @@ int main()
             // Delete an existing order
             printf("\nEnter the number of the order to delete: ");
             int deleteIndex;
-            scanf("%d", &deleteIndex);
-            if (deleteIndex >= 1 && deleteIndex <= orderCount) {
-                deleteOrder(orders, &orderCount, deleteIndex - 1);
-            } else {
-                printf("Invalid order index. Deletion failed.\n");
+            while (scanf("%d", &deleteIndex) != 1 || (deleteIndex < 1 || deleteIndex > orderCount))
+            {
+                printf("Invalid input. Please enter a valid order number: ");
+                while (getchar() != '\n')
+                    ; // Clear input buffer
             }
+            deleteOrder(orders, &orderCount, deleteIndex - 1);
             break;
         case 4:
             // List all orders
@@ -328,7 +341,12 @@ int main()
 
         // Prompt for the next operation
         printf("\nChoose an operation (0 to exit): ");
-        scanf("%d", &operation);
+        while (scanf("%d", &operation) != 1 || (operation < 0 || operation > 4))
+        {
+            printf("Invalid input. Please enter a valid operation number: ");
+            while (getchar() != '\n')
+                ; // Clear input buffer
+        }
     }
     printf("\n\nOrder taken successfully!\n\n");
     printf("\n\nThank you for using this ordering system program.\n");
