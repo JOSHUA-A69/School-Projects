@@ -100,7 +100,7 @@ void insertOrder(struct OrderDetails *orders, int *orderCount)
         struct OrderDetails newOrder;
 
         time_t now = time(NULL);
-        strftime(newOrder.orderTime, sizeof(newOrder.orderTime), "%Y-%m-%d %H:%M:%S", gmtime(&now));
+        strftime(newOrder.orderTime, sizeof(newOrder.orderTime), "%Y-%m-%d %H:%M:%S", localtime(&now));
 
         printf("\nEnter your name: ");
         scanf("%s", newOrder.customerName);
