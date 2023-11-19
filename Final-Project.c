@@ -8,7 +8,7 @@
 #define MAX_ORDERS 100
 #define MAX_NAME_LENGTH 50
 #define MAX_ADDRESS_LENGTH 100
-#define MAX_ITEM_NAME_LENGTH 50
+#define MAX_ITEM_NAME_LENGTH 100
 
 const char *items[] = {
     "24pcs Premium Maki", "32pcs Premium Maki", "40pcs Premium Maki", "56pcs Premium Maki", "64pcs Premium Maki",
