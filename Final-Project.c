@@ -330,6 +330,9 @@ int main()
         printf("\nChoose an operation (0 to exit): ");
         scanf("%d", &operation);
     }
+    printf("\n\nOrder taken successfully!\n\n");
+    printf("\n\nThank you for using this ordering system program.\n");
+    printf("This program is developed by Joshua Russel Uy and Jake Perez.");
 
     return 0;
 }
