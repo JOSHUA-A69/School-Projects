@@ -209,6 +209,7 @@ int main()
 
     do
     {
+        // Move the initial order details display here
         printf("\nEnter your name: ");
         scanf("%s", orders[orderCount].customerName);
 
@@ -242,6 +243,10 @@ int main()
 
         orders[orderCount].totalCost = prices[itemIndex] * orders[orderCount].quantity;
         grandTotal += orders[orderCount].totalCost;
+
+        // Set the order time here
+        time_t now = time(NULL);
+        strftime(orders[orderCount].orderTime, sizeof(orders[orderCount].orderTime), "%Y-%m-%d %H:%M:%S", localtime(&now));
 
         while (1)
         {
