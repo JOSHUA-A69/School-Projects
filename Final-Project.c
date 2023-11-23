@@ -5,6 +5,16 @@
 #include <ctype.h>
 #include <time.h>
 
+// Function to clear the console screen
+void clearScreen()
+{
+#ifdef _WIN32
+    system("cls");
+#else
+    system("clear");
+#endif
+}
+
 #define MAX_ORDERS 100
 #define MAX_NAME_LENGTH 50
 #define MAX_ADDRESS_LENGTH 100
@@ -39,6 +49,7 @@ int sortedIndices[sizeof(items) / sizeof(items[0])];
 // Function to display the menu
 void displayMenu(const char *items[], const double prices[], int menuSize)
 {
+    clearScreen();
     printf("\n\t*****WELCOME TO DIVINE SUSHI SHOP*****\n\n");
     printf(" ________________________________________________________\n");
     printf("                 ==MENU==                     \n");
@@ -113,54 +124,52 @@ void insertOrder(struct OrderDetails *orders, int *orderCount)
         strftime(newOrder.orderTime, sizeof(newOrder.orderTime), "%Y-%m-%d %H:%M:%S", localtime(&now));
 
         printf("\nEnter your name: ");
-        scanf("%s", newOrder.customerName);
+        scanf(" %[^\n]", newOrder.customerName);
 
         printf("Enter your address: ");
         scanf(" %[^\n]", newOrder.customerAddress);
 
-        printf("Enter the name of the item you want to buy: ");
-        scanf(" %[^\n]", newOrder.itemName);
-
-        // Convert the input item name to lowercase
-        for (int i = 0; newOrder.itemName[i]; i++)
+        int itemIndex;
+        do
         {
-            newOrder.itemName[i] = tolower(newOrder.itemName[i]);
-        }
+            // Display the menu
+            displayMenu(items, prices, sizeof(items) / sizeof(items[0]));
 
-        int itemIndex = findMenuItemByName(items, sizeof(items) / sizeof(items[0]), newOrder.itemName);
+            printf("Enter the name of the item you want to buy: ");
+            scanf(" %[^\n]", newOrder.itemName);
 
-        if (itemIndex == -1)
-        {
-            printf("Item not found in the menu. Adding a new item.\n");
+            // Convert the input item name to lowercase
+            for (int i = 0; newOrder.itemName[i]; i++)
+            {
+                newOrder.itemName[i] = tolower(newOrder.itemName[i]);
+            }
 
-            // Dynamically allocate memory for the new item name
-            items[sizeof(items) / sizeof(items[0])] = strdup(newOrder.itemName);
-            prices[sizeof(items) / sizeof(items[0])] = 0.0; // You can set the initial price to any value
+            itemIndex = findMenuItemByName(items, sizeof(items) / sizeof(items[0]), newOrder.itemName);
 
-            // Update sorted indices
-            sortedIndices[sizeof(items) / sizeof(items[0])] = sizeof(items) / sizeof(items[0]);
+            if (itemIndex == -1)
+            {
+                printf("Item not found in the menu. Please enter a valid item name.\n");
+            }
+            else
+            {
+                printf("You selected: %s\n", newOrder.itemName);
 
-            // Increment the size of the menu
-            sizeof(items) / sizeof(items[0])++;
+                printf("Enter quantity: ");
+                while (scanf("%d", &newOrder.quantity) != 1 || newOrder.quantity <= 0)
+                {
+                    printf("Invalid input. Please enter a positive quantity: ");
+                    while (getchar() != '\n')
+                        ; // Clear input buffer
+                }
 
-            // Set itemIndex to the newly added item
-            itemIndex = sizeof(items) / sizeof(items[0]) - 1;
-        }
+                newOrder.totalCost = prices[itemIndex] * newOrder.quantity;
 
-        printf("Enter quantity: ");
-        while (scanf("%d", &newOrder.quantity) != 1 || newOrder.quantity <= 0)
-        {
-            printf("Invalid input. Please enter a positive quantity: ");
-            while (getchar() != '\n')
-                ; // Clear input buffer
-        }
+                orders[*orderCount] = newOrder;
+                (*orderCount)++;
 
-        newOrder.totalCost = prices[itemIndex] * newOrder.quantity;
-
-        orders[*orderCount] = newOrder;
-        (*orderCount)++;
-
-        printf("\nOrder inserted successfully!\n");
+                printf("\nOrder inserted successfully!\n");
+            }
+        } while (itemIndex == -1);
     }
     else
     {
@@ -192,6 +201,7 @@ void deleteOrder(struct OrderDetails *orders, int *orderCount, int index)
 // Function to list all orders
 void listOrders(struct OrderDetails *orders, int orderCount)
 {
+    clearScreen();
     printf("\nOrder details:\n");
     for (int i = 0; i < orderCount; i++)
     {
@@ -220,39 +230,54 @@ int main()
     {
         // Move the initial order details display here
         printf("\nEnter your name: ");
-        scanf("%s", orders[orderCount].customerName);
+        scanf(" %[^\n]", orders[orderCount].customerName);
 
         printf("Enter your address: ");
         scanf(" %[^\n]", orders[orderCount].customerAddress);
 
-        printf("Enter the number corresponding to the item you want to buy: ");
-        int choice;
-        while (scanf("%d", &choice) != 1 || choice < 1 || choice > sizeof(items) / sizeof(items[0]))
+        int itemIndex;
+        do
         {
-            printf("Invalid choice. Please enter a valid item number: ");
-            while (getchar() != '\n')
-                ; // Clear input buffer
-        }
+            // Display the menu
+            displayMenu(items, prices, sizeof(items) / sizeof(items[0]));
 
-        int itemIndex = sortedIndices[choice - 1];
+            printf("Enter the name of the item you want to buy: ");
+            scanf(" %[^\n]", orders[orderCount].itemName);
 
-        strcpy(orders[orderCount].itemName, items[itemIndex]);
-        printf("You selected: %s\n", orders[orderCount].itemName);
+            // Convert the input item name to lowercase
+            for (int i = 0; orders[orderCount].itemName[i]; i++)
+            {
+                orders[orderCount].itemName[i] = tolower(orders[orderCount].itemName[i]);
+            }
 
-        printf("Enter quantity: ");
-        while (scanf("%d", &orders[orderCount].quantity) != 1 || orders[orderCount].quantity <= 0)
-        {
-            printf("Invalid input. Please enter a positive quantity: ");
-            while (getchar() != '\n')
-                ; // Clear input buffer
-        }
+            itemIndex = findMenuItemByName(items, sizeof(items) / sizeof(items[0]), orders[orderCount].itemName);
 
-        orders[orderCount].totalCost = prices[itemIndex] * orders[orderCount].quantity;
-        grandTotal += orders[orderCount].totalCost;
+            if (itemIndex == -1)
+            {
+                printf("Item not found in the menu. Please enter a valid item name.\n");
+            }
+            else
+            {
+                printf("You selected: %s\n", orders[orderCount].itemName);
 
-        // Set the order time here
-        time_t now = time(NULL);
-        strftime(orders[orderCount].orderTime, sizeof(orders[orderCount].orderTime), "%Y-%m-%d %H:%M:%S", localtime(&now));
+                printf("Enter quantity: ");
+                while (scanf("%d", &orders[orderCount].quantity) != 1 || orders[orderCount].quantity <= 0)
+                {
+                    printf("Invalid input. Please enter a positive quantity: ");
+                    while (getchar() != '\n')
+                        ; // Clear input buffer
+                }
+
+                orders[orderCount].totalCost = prices[itemIndex] * orders[orderCount].quantity;
+                grandTotal += orders[orderCount].totalCost;
+
+                // Set the order time here
+                time_t now = time(NULL);
+                strftime(orders[orderCount].orderTime, sizeof(orders[orderCount].orderTime), "%Y-%m-%d %H:%M:%S", localtime(&now));
+
+                printf("\nOrder inserted successfully!\n");
+            }
+        } while (itemIndex == -1);
 
         while (1)
         {
@@ -354,3 +379,4 @@ int main()
 
     return 0;
 }
+
