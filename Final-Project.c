@@ -19,6 +19,7 @@ void clearScreen()
 #define MAX_NAME_LENGTH 50
 #define MAX_ADDRESS_LENGTH 100
 #define MAX_ITEM_NAME_LENGTH 100
+#define CONTACT_NUMBER_LENGTH 12 // Including null terminator
 
 const char *items[] = {
     "24pcs Premium Maki", "32pcs Premium Maki", "40pcs Premium Maki", "56pcs Premium Maki", "64pcs Premium Maki",
@@ -41,6 +42,7 @@ struct OrderDetails
     double totalCost;
     char orderTime[30];
     char customerAddress[MAX_ADDRESS_LENGTH];
+    char contactNumber[CONTACT_NUMBER_LENGTH];
 };
 
 // Global variable for sorted indices
@@ -129,13 +131,26 @@ void insertOrder(struct OrderDetails *orders, int *orderCount)
         printf("Enter your address: ");
         scanf(" %[^\n]", newOrder.customerAddress);
 
+        // Validate contact number
+        do
+        {
+            printf("Enter your contact number (11 digits): ");
+            scanf(" %11s", newOrder.contactNumber);
+
+            if (strlen(newOrder.contactNumber) != 11 || !isdigit(newOrder.contactNumber[0]))
+            {
+                printf("Invalid input. Please enter a valid 11-digit contact number.\n");
+            }
+
+        } while (strlen(newOrder.contactNumber) != 11 || !isdigit(newOrder.contactNumber[0]));
+
         int itemIndex;
         do
         {
             // Display the menu
             displayMenu(items, prices, sizeof(items) / sizeof(items[0]));
 
-            printf("Enter the name of the item you want to buy: ");
+            printf("Enter the name of the item you want to buy\n(NOTE:It will keep repeating if you input anything that is not found in the menu.): ");
             scanf(" %[^\n]", newOrder.itemName);
 
             // Convert the input item name to lowercase
@@ -207,6 +222,7 @@ void listOrders(struct OrderDetails *orders, int orderCount)
     {
         printf("\nOrder #%d\n", i + 1);
         printf("Name: %s\n", orders[i].customerName);
+        printf("Contact Number: %s\n", orders[i].contactNumber);
         printf("Address: %s\n", orders[i].customerAddress);
         printf("Item: %s\n", orders[i].itemName);
         printf("Quantity: %d\n", orders[i].quantity);
@@ -232,6 +248,19 @@ int main()
         printf("\nEnter your name: ");
         scanf(" %[^\n]", orders[orderCount].customerName);
 
+        // Validate contact number
+        do
+        {
+            printf("Enter your contact number (11 digits): ");
+            scanf(" %11s", orders[orderCount].contactNumber);
+
+            if (strlen(orders[orderCount].contactNumber) != 11 || !isdigit(orders[orderCount].contactNumber[0]))
+            {
+                printf("Invalid input. Please enter a valid 11-digit contact number.\n");
+            }
+
+        } while (strlen(orders[orderCount].contactNumber) != 11 || !isdigit(orders[orderCount].contactNumber[0]));
+
         printf("Enter your address: ");
         scanf(" %[^\n]", orders[orderCount].customerAddress);
 
@@ -241,7 +270,7 @@ int main()
             // Display the menu
             displayMenu(items, prices, sizeof(items) / sizeof(items[0]));
 
-            printf("Enter the name of the item you want to buy: ");
+            printf("Enter the name of the item you want to buy\n(NOTE:It will keep repeating if you input anything that is not found in the menu.):");
             scanf(" %[^\n]", orders[orderCount].itemName);
 
             // Convert the input item name to lowercase
@@ -366,7 +395,7 @@ int main()
 
         // Prompt for the next operation
         printf("\nChoose an operation (0 to exit): ");
-        while (scanf("%d", &operation) != 1 || (operation < 0 || operation > 4))
+        while (scanf("%d", &operation) != 1 ||(operation < 0 || operation > 4))
         {
             printf("Invalid input. Please enter a valid operation number: ");
             while (getchar() != '\n')
@@ -376,7 +405,5 @@ int main()
     printf("\n\nOrder taken successfully!\n\n");
     printf("\n\nThank you for using this ordering system program.\n");
     printf("This program is developed by Joshua Russel Uy and Jake Perez.");
-
     return 0;
 }
-
